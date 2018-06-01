@@ -28,92 +28,111 @@
         http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
      -->
 
-    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
-    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
-
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="dist/css/framework7.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
 </head>
 
 <body>
-    <!-- Status bar overlay for full screen mode (PhoneGap) -->
-    <div class="statusbar-overlay"></div>
+     <body>
+    <!-- App root element -->
+    <div id="app">
+      <!-- Statusbar overlay -->
+      <div class="statusbar"></div>
 
-    <!-- Panels overlay-->
-    <div class="panel-overlay"></div>
-    <!-- Left panel with reveal effect-->
-    <div class="panel panel-left panel-reveal">
-        <div class="content-block">
-            <ul>
-                <li> <a href="collection.html" data-animate="false">Handbags</a></li>
-                <li> <a href="#">Shoes</a></li>
-                <li> <a href="#">Accessories</a></li>
-                <li> <a href="#">Jewelry</a></li>
-                <li> <a href="#" data-login-screen=".my-login-screen" class="login-screen">Login</a></li>
-                <li> <a href="register.html">Register</a></li>
-            </ul>
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main">
+        <!-- Initial Page, "data-name" contains page name -->
+        <div data-name="home" class="page">
+
+          <!-- Top Navbar -->
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="title">Awesome App</div>
+            </div>
+          </div>
+
+          <!-- Toolbar -->
+          <div class="toolbar">
+            <div class="toolbar-inner">
+              <!-- Toolbar links -->
+              <a href="#" class="link">Link 1</a>
+              <a href="#" class="link">Link 2</a>
+            </div>
+          </div>
+
+          <!-- Scrollable page content -->
+          <div class="page-content">
+            <p>Page content goes here</p>
+             <a href="#" class="button login-screen-open" data-login-screen=".user-login-screen">Open As Modal</a>
+             <a href="#" class="button login-screen-open" data-login-screen=".user-register-screen">SIGN UP</a>
+            <!-- Link to another page -->
+            <a href="/about/">About app</a>
+          </div>
         </div>
+      </div>
     </div>
 
-    <!-- Views -->
-    <div class="views">
-        <!-- Your main view, should have "view-main" class -->
-        <div class="view view-main">
-            <!-- Top Navbar-->
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding">Fashionalize</div>
-                    <div class="right">
-                        <!--
-                          Right link contains only icon - additional "icon-only" class
-                          Additional "open-panel" class tells app to open panel when we click on this link
-                        -->
-                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
-            <div class="pages navbar-through toolbar-through">
-                <!-- Page, "data-page" contains page name -->
-                <div data-page="index" class="page">
-                    <!-- Scrollable page content -->
-                    <div class="page-content">
-                        <div class="content-block">
-                            <p>Welcome to Fashionalize</p>
-                            <!-- Link to another page -->
-                            <a href="about.html">About app</a>
-                            <a href="#" class="button login-screen-open" data-login-screen=".login-screen">Login</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Bottom Toolbar-->
-            <div class="toolbar">
-                <div class="toolbar-inner">
-                    <!-- Toolbar links -->
-                    <a href="#" class="link">Link 1</a>
-                    <a href="#" class="link">Link 2</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<div class="login-screen">
+<div class="login-screen user-login-screen" data->
   <!-- Default view-page layout -->
   <div class="view">
     <div class="page">
       <!-- page-content has additional login-screen content -->
       <div class="page-content login-screen-content">
-        <div class="login-screen-title">My App</div>
+        <div class="login-screen-title">Fashionerize</div>
         <!-- Login form -->
         <form>
           <div class="list">
             <ul>
               <li class="item-content item-input">
                 <div class="item-inner">
-                  <div class="item-title item-label">Username</div>
+                  <div class="item-title item-label">Email</div>
                   <div class="item-input-wrap">
-                    <input type="text" name="username" placeholder="Username">
+                    <input type="text" name="username" placeholder="Email">
+                    <span class="input-clear-button"></span>
+                  </div>
+                </div>
+              </li>
+              <li class="item-content item-input">
+                <div class="item-inner">
+                  <div class="item-title item-label">Password</div>
+                  <div class="item-input-wrap">
+                    <input type="password" name="password" placeholder="Password">
+                    <span class="input-clear-button"></span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="list">
+            <ul>
+              <li>
+                <a href="#" class="item-link list-button">Sign In</a>
+              </li>
+            </ul>
+            <div class="block-footer">Some text with login information.</div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="login-screen user-register-screen" data->
+  <!-- Default view-page layout -->
+  <div class="view">
+    <div class="page">
+      <!-- page-content has additional login-screen content -->
+      <div class="page-content login-screen-content">
+        <div class="login-screen-title">Fashionerize - Create Account</div>
+        <!-- Login form -->
+        <form>
+          <div class="list">
+            <ul>
+              <li class="item-content item-input">
+                <div class="item-inner">
+                  <div class="item-title item-label">Email</div>
+                  <div class="item-input-wrap">
+                    <input type="text" name="username" placeholder="Email">
                     <span class="input-clear-button"></span>
                   </div>
                 </div>
@@ -144,8 +163,13 @@
 </div>
 
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+    <script type="text/javascript" src="dist/js/framework7.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
 </body>
 
 </html>
+
+
+<body>
+  
+</body>
