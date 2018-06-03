@@ -109,6 +109,7 @@ $$(document).on('page:init', '.page[data-name="product"]', function (e) {
          $$('.title').text(response.title)
          $$('#main-image').attr('src', response.images[0].image_url)
          $$('#product_id').val(response.sku);
+         response.images.forEach(loadSlider);
          image_url = response.images[0].image_url;
          price = response.price;
          title = response.title;
@@ -189,6 +190,13 @@ function showProduct(item, index){
     console.log(item)
 }
 
+function loadSlider(img, index) {
+    console.log(img.image_url)
+    var swiper = $$('.swiper-slide');
+    swiper.css({'width': '100%'})
+    swiper.append('<div class="swiper-slide"><img src="'+img.image_url+'"/></div>');
+}
+
 // $$(document).on('click', '.add-to-cart', function(e){
 //     var sku = $$('#product_id').val()
 //      $$.ajax({
@@ -209,6 +217,19 @@ function showProduct(item, index){
 
 
 function createProduct(prod, index) {
+    var product = '<div class="col-50">';
+        product += '<a href="/product/?id='+prod.sku+'" class="product-block">'
+        product +='<div class="product-image">'
+        product +='<img src="'+ prod.images[0].image_url+'" class="lazy lazy-fade-in">'
+        product +='</div>'
+        product +='<div class="title">'+ prod.title +'</div>'
+        product +='<div class="price">'+ prod.price+'</div>'
+        product +='</a>'
+        product +='</div>'
+        $$('#products').append(product);
+}
+
+function cartProduct(prod, index) {
     var product = '<div class="col-50">';
         product += '<a href="/product/?id='+prod.sku+'" class="product-block">'
         product +='<div class="product-image">'

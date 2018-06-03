@@ -28982,6 +28982,9 @@ iframe#viAd {
   background: #fff;
   color: #000;
 }
+
+.swiper-slide img {max-width: 100%}
+
 .demo-swiper .swiper-slide {
   box-sizing: border-box;
   border: 1px solid #ddd;
@@ -28990,7 +28993,7 @@ iframe#viAd {
 .demo-swiper {
   margin: 0px 0 35px;
   font-size: 18px;
-  height: 120px;
+  height: 375px;
 }
 .demo-swiper.demo-swiper-auto .swiper-slide {
   width: 85%;
