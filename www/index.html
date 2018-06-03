@@ -37,19 +37,22 @@
     <!-- App root element -->
     <div id="app">
       <!-- Statusbar overlay -->
+      <div class="panel panel-left">
+        <div class="content-block">
+            <a class="close close-panel" href="#"> x </a>
+            <ul class="left-nav">
+              <li><a href="index.html" class="home">HOME</a></li>
+              <li><a href="gallery.html" class="gallery">GALLERY</a></li>
+              <li><a href="contact.html" class="contact">CONTACT</a></li>
+            </ul>
+      </div>
+      </div>
       <div class="statusbar"></div>
 
       <!-- Your main view, should have "view-main" class -->
       <div class="view view-main">
         <!-- Initial Page, "data-name" contains page name -->
         <div data-name="home" class="page">
-
-          <!-- Top Navbar -->
-          <div class="navbar">
-            <div class="navbar-inner">
-              <div class="title">Awesome App</div>
-            </div>
-          </div>
 
           <!-- Toolbar -->
           <div class="toolbar">
@@ -65,6 +68,11 @@
             <p>Page content goes here</p>
              <a href="#" class="button login-screen-open" data-login-screen=".user-login-screen">Open As Modal</a>
              <a href="#" class="button login-screen-open" data-login-screen=".user-register-screen">SIGN UP</a>
+             <a class="button" href="/collection/"> Products </a>
+             <a class="button" href="/cart/"> Cart </a>
+             <a class="button" href="/order/"> Orders </a>
+             <a class="button" href="/profile/"> Profile </a>
+
             <!-- Link to another page -->
             <a href="/about/">About app</a>
           </div>
@@ -87,7 +95,7 @@
                 <div class="item-inner">
                   <div class="item-title item-label">Email</div>
                   <div class="item-input-wrap">
-                    <input type="text" name="username" placeholder="Email">
+                    <input type="text" name="username" placeholder="Email" id="login-email">
                     <span class="input-clear-button"></span>
                   </div>
                 </div>
@@ -96,7 +104,7 @@
                 <div class="item-inner">
                   <div class="item-title item-label">Password</div>
                   <div class="item-input-wrap">
-                    <input type="password" name="password" placeholder="Password">
+                    <input type="password" name="password" placeholder="Password" id="login-password">
                     <span class="input-clear-button"></span>
                   </div>
                 </div>
@@ -106,10 +114,10 @@
           <div class="list">
             <ul>
               <li>
-                <a href="#" class="item-link list-button">Sign In</a>
+                <a href="#" class="item-link list-button" id="login-button">Sign In</a>
               </li>
             </ul>
-            <div class="block-footer">Some text with login information.</div>
+            <div class="block-footer"> <p><a class="link login-screen-close" href="#">Close Login Screen</a></p>  </div>
           </div>
         </form>
       </div>
@@ -125,14 +133,23 @@
       <div class="page-content login-screen-content">
         <div class="login-screen-title">Fashionerize - Create Account</div>
         <!-- Login form -->
-        <form>
+        <form id="user-sign-up" name="sign-up">
           <div class="list">
             <ul>
+             <li class="item-content item-input">
+                <div class="item-inner">
+                  <div class="item-title item-label">Name</div>
+                  <div class="item-input-wrap">
+                    <input type="text" name="name" placeholder="Name" class="required" id="name">
+                    <span class="input-clear-button"></span>
+                  </div>
+                </div>
+              </li>
               <li class="item-content item-input">
                 <div class="item-inner">
                   <div class="item-title item-label">Email</div>
                   <div class="item-input-wrap">
-                    <input type="text" name="username" placeholder="Email">
+                    <input type="text" name="username" placeholder="Email" class="required" id="email">
                     <span class="input-clear-button"></span>
                   </div>
                 </div>
@@ -141,7 +158,16 @@
                 <div class="item-inner">
                   <div class="item-title item-label">Password</div>
                   <div class="item-input-wrap">
-                    <input type="password" name="password" placeholder="Password">
+                    <input type="password" name="password" placeholder="Password" class="required" id="password">
+                    <span class="input-clear-button"></span>
+                  </div>
+                </div>
+              </li>
+              <li class="item-content item-input">
+                <div class="item-inner">
+                  <div class="item-title item-label">Confirm Password</div>
+                  <div class="item-input-wrap">
+                    <input type="password" name="confirm_password" placeholder="Confirm Password" class="required" id="confirm_password">
                     <span class="input-clear-button"></span>
                   </div>
                 </div>
@@ -151,10 +177,12 @@
           <div class="list">
             <ul>
               <li>
-                <a href="#" class="item-link list-button">Sign In</a>
+                <a href="#" class="item-link list-button sign-up-button" id="sign-up-button">Sign Up</a>
               </li>
             </ul>
-            <div class="block-footer">Some text with login information.</div>
+            <ul>
+                <li><p><a class="link login-screen-close" href="#">Close Login Screen</a></p> </li>
+            </ul>
           </div>
         </form>
       </div>

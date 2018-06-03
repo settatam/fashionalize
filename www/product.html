@@ -1,30 +1,55 @@
 <div class="pages">
-    <div data-page="product" class="page">
-        <div class="page-content">
-        	<form>
-	            <div class="content-block">
-	                <div class="row" id="products">
-	                	 <h1 class="title"> </h1>
-	                     <div class="product-images">
-	                     	<img src="" id="main-image" />
-	                     </div>
-	                    </div>
-	                    <div class="row">
-		                     <div class="price">$2000.00</div>
-		                     <div class="other-images"></div>
-		                     <div class="product-description"><p>This Christian Dior tie features a paisley motif. It shows minimal staining, minor snagging, and marking.</p></div>
-		                     <div class="btn"></div>
-	                	</div>
-	                	<div class="row">
-	                		<a class="button operation" data-operation="add-to-cart">Add to Cart</a>
-	                		<a class="button operation" data-operation="add-to-wishlist">Add to Wishlist</a>
-	                		<input type="hidden" id="product_id" name="sku">
-	                		<input type="hidden" id="operation" name="operation">
-	                		<input type="hidden" id="price" name="price">
-	                		<input type="hidden" id="image" name="image_url">
-	                	</div>
+    <div data-name="product" class="page">
+    <div class="navbar">
+	  <div class="navbar-inner">
+	    <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+	    <div class="center sliding">All Products</div>
+	    <div class="right">
+	      <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+	    </div>
+	  </div>
+	</div>
+    <div class="page-content">
+    <div class="row">
+    	<div class="swiper-container swiper-init demo-swiper">
+			  <div class="swiper-wrapper">
+			    <div class="swiper-slide">Slide 1</div>
+			    <div class="swiper-slide">Slide 2</div>
+			    <div class="swiper-slide">Slide 3</div>
+			    <div class="swiper-slide">Slide 4</div>
+			    <div class="swiper-slide">Slide 5</div>
+			    <div class="swiper-slide">Slide 6</div>
+			    <div class="swiper-slide">Slide 7</div>
+			    <div class="swiper-slide">Slide 8</div>
+			    <div class="swiper-slide">Slide 9</div>
+			    <div class="swiper-slide">Slide 10</div>
+			  </div>
+			</div>
+        <form>
+	        <div class="content-block">
+	            <div class="row" id="products">
+	                <h1 class="title"> </h1>
+	                <div class="product-images">
+	                    <img src="" id="main-image" />
+	                </div>
+	                </div>
+	                <div class="row">
+		                <div class="price">$2000.00</div>
+		                <div class="other-images"></div>
+		                <div class="product-description"><p>This Christian Dior tie features a paisley motif. It shows minimal staining, minor snagging, and marking.</p></div>
+		                <div class="btn"></div>
+	                </div>
+	                <div class="row">
+	                	<a class="button operation add-to-cart" data-operation="add-to-cart">Add to Cart</a>
+	                	<a class="button operation add-to-wishlist" data-operation="add-to-wishlist">Add to Wishlist</a>
+	                	<input type="hidden" id="product_id" name="sku">
+	                	<input type="hidden" id="operation" name="operation">
+	                	<input type="hidden" id="price" name="price">
+	                	<input type="hidden" id="image" name="image_url">
+	                </div>
 	            </div>
         	</form>
         </div>
+    </div>
     </div>
 </div>
