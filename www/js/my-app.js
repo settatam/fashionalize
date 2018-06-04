@@ -203,12 +203,13 @@ function showProduct(item, index){
 }
 
 function loadSlider(img, index) {
-    console.log(img.image_url)
     var swiper = $$('.swiper-wrapper');
     swiper.append('<div class="swiper-slide"><div class="swiper-slide-image"><img src="'+img.image_url+'"/></div></div>');
 }
 
+
 function loadAttributes(attr, index) {
+    if(attr.name == "Type") $$('.type').text(attr.value);
     $$('.attributes').append('<p>' + attr.name + ': ' + attr.value + '</p>');
 }
 
@@ -232,7 +233,6 @@ function loadAttributes(attr, index) {
 
 
 function createProduct(prod, index) {
-    console.log(prod)
     var product = '<div class="col-50">';
         product += '<a href="/product/?id='+prod.id+'" class="product-block">'
         product +='<div class="product-image">'
