@@ -28972,6 +28972,18 @@ iframe#viAd {
 
 /*My styles*/
 
+div[class*="col"] {
+  background: #fff;
+  text-align: center;
+  color: #000;
+  border: 1px solid #ddd;
+  padding: 5px;
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+
+div.row { padding: 15px; }
+
 /* A bit of demo styles */;
 .demo-swiper .swiper-slide {
   font-size: 25px;
@@ -28981,19 +28993,26 @@ iframe#viAd {
   align-items: center;
   background: #fff;
   color: #000;
+  width: 100% !important;
 }
 
-.swiper-slide img {max-width: 100%}
+.swiper-slide-image {position: relative; width: 100% !important;}
+.swiper-slide-image img {position: absolute; height: 275px;}
+
+.swiper-slide-image img {max-width: 100%; height: 275px;}
 
 .demo-swiper .swiper-slide {
   box-sizing: border-box;
   border: 1px solid #ddd;
   background: #fff;
+  width: 100% !important;
 }
 .demo-swiper {
   margin: 0px 0 35px;
   font-size: 18px;
-  height: 375px;
+  height: 300px;
+  position: relative;
+  width: 100% !important;
 }
 .demo-swiper.demo-swiper-auto .swiper-slide {
   width: 85%;
@@ -29004,3 +29023,6 @@ iframe#viAd {
 .demo-swiper.demo-swiper-auto .swiper-slide:nth-child(3n) {
   width: 30%;
 }
+
+.cart-image { width: 100%; }
+.cart-image img {max-width: 100%;}

@@ -115,7 +115,17 @@ $$(document).on('page:init', '.page[data-name="product"]', function (e) {
          title = response.title;
          amount = response.price;
          sku = response.sku;
-    })
+         var swiper = app.swiper.create('.demo-swiper', {
+            pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true,
+        }
+
+        });
+
+        swiper.pagination.render();
+        })
 })
 
 $$(document).on('page:init', '.page[data-name="cart"]', function (e) {
@@ -192,9 +202,9 @@ function showProduct(item, index){
 
 function loadSlider(img, index) {
     console.log(img.image_url)
-    var swiper = $$('.swiper-slide');
+    var swiper = $$('.swiper-wrapper');
     swiper.css({'width': '100%'})
-    swiper.append('<div class="swiper-slide"><img src="'+img.image_url+'"/></div>');
+    swiper.append('<div class="swiper-slide"><div class="swiper-slide-image"><img src="'+img.image_url+'"/></div></div>');
 }
 
 // $$(document).on('click', '.add-to-cart', function(e){
