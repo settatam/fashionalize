@@ -126,6 +126,7 @@ $$(document).on('page:init', '.page[data-name="product"]', function (e) {
         });
 
         swiper.pagination.render();
+        response.attributes.forEach(loadAttributes);
     })
 })
 
@@ -207,6 +208,10 @@ function loadSlider(img, index) {
     swiper.append('<div class="swiper-slide"><div class="swiper-slide-image"><img src="'+img.image_url+'"/></div></div>');
 }
 
+function loadAttributes(attr, index) {
+    $$('.attributes').append('<p>' + attr.name + ': ' + attr.value + '</p>');
+}
+
 // $$(document).on('click', '.add-to-cart', function(e){
 //     var sku = $$('#product_id').val()
 //      $$.ajax({
@@ -252,5 +257,13 @@ function cartProduct(prod, index) {
         product +='</a>'
         product +='</div>'
         $$('#products').append(product);
+}
+
+function getCategory(cat){
+    if(cat == 1) return "Handbag";
+    if(cat == 2) return "Shoe";
+    if(cat == 3) return "Accessory";
+    if(cat == 4) return "Jewelry";
+
 }
 

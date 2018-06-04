@@ -29028,6 +29028,8 @@ div[class*="col"] {
 .cart-image { width: 100%; }
 .cart-image img {max-width: 100%;}
 .cart-price {font-size: 20px; font-weight: bold; margin: 0 !important; text-align: left}
-.product-description {text-align: left; padding: 0 15px}
+.product-description {text-align: left;}
+.attributes p {text-align: left;}
 .price-orders {text-align: left; padding: 0 15px 0 15px;}
 .price-orders .button {margin-bottom: 5px;}
+.padding-15 {padding: 0 15px;}
