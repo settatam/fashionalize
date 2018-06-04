@@ -103,8 +103,8 @@ $$(document).on('page:init', '.page[data-name="collection"]', function (e) {
 $$(document).on('page:init', '.page[data-name="product"]', function (e) {
     // Do something here for "about" page
      app.request.json('https://www.luxesystems.com/api/products/'+mainView.router.currentRoute.query.id, function(response){
-         $$('.product-description').text(response.title)
-         $$('.price').text(response.price) 
+         $$('.product-description').text(response.OverallConditionDescription)
+         $$('.price').text('$'+response.price) 
          $$('.designer').text(response.designer) 
          $$('.title').text(response.title)
          $$('#main-image').attr('src', response.images[0].image_url)
@@ -233,13 +233,14 @@ function createProduct(prod, index) {
         product +='<img src="'+ prod.images[0].image_url+'" class="lazy lazy-fade-in">'
         product +='</div>'
         product +='<div class="title">'+ prod.title +'</div>'
-        product +='<div class="price">'+ prod.price+'</div>'
+        product +='<div class="price">$'+ prod.price +'</div>'
         product +='</a>'
         product +='</div>'
         $$('#products').append(product);
 }
 
 function cartProduct(prod, index) {
+    $$('.designer').text(prod.designer)
     var product = '<div class="col-50">';
         product += '<a href="/product/?id='+prod.sku+'" class="product-block">'
         product +='<div class="product-image">'
