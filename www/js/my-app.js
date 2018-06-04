@@ -204,7 +204,6 @@ function showProduct(item, index){
 function loadSlider(img, index) {
     console.log(img.image_url)
     var swiper = $$('.swiper-wrapper');
-    swiper.css({'width': '100%'})
     swiper.append('<div class="swiper-slide"><div class="swiper-slide-image"><img src="'+img.image_url+'"/></div></div>');
 }
 
