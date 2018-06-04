@@ -16,7 +16,15 @@
 				<div class="swiper-pagination"></div>
 		</div>
 		<div class="title"> </div>
-		<div class="price cart-price"></div>
+		<div class="row price-orders">
+			<div class="col-50">
+		 		<div class="price cart-price"></div>
+			</div>
+			<div class="col-50">
+		 		<a class="button operation add-to-cart" data-operation="add-to-cart">Add to Cart</a>
+		        <a class="button operation add-to-wishlist" data-operation="add-to-wishlist">Add to Wishlist</a>
+			</div>
+		</div>
     <div class="row">
     	<div class="col-100">
 	        <form>
@@ -26,8 +34,7 @@
 			                <div class="btn"></div>
 		                </div>
 		                <div class="row">
-		                	<a class="button operation add-to-cart" data-operation="add-to-cart">Add to Cart</a>
-		                	<a class="button operation add-to-wishlist" data-operation="add-to-wishlist">Add to Wishlist</a>
+		                	
 		                	<input type="hidden" id="product_id" name="sku">
 		                	<input type="hidden" id="operation" name="operation">
 		                	<input type="hidden" id="price" name="price">

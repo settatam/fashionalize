@@ -43,6 +43,7 @@ var $$ = Dom7;
 
 var price, image_url, sku, amount, user_id, name, sku;
 var status = "pending";
+var currency = '$';
 
 
 // // If we need to use custom DOM library, let's save it to $$ variable:
@@ -94,15 +95,15 @@ var status = "pending";
 
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):
 $$(document).on('page:init', '.page[data-name="collection"]', function (e) {
-    // Do something here for "about" page
     app.request.json('https://www.luxesystems.com/api/products', function(response){
+        console.log(response);
         response.forEach(createProduct)
     })
 })
 
 $$(document).on('page:init', '.page[data-name="product"]', function (e) {
-    // Do something here for "about" page
-     app.request.json('https://www.luxesystems.com/api/products/'+mainView.router.currentRoute.query.id, function(response){
+    console.log(mainView.router.currentRoute.query.id)
+    app.request.json('https://www.luxesystems.com/api/products/'+mainView.router.currentRoute.query.id, function(response){
          $$('.product-description').text(response.OverallConditionDescription)
          $$('.price').text('$'+response.price) 
          $$('.designer').text(response.designer) 
@@ -125,7 +126,7 @@ $$(document).on('page:init', '.page[data-name="product"]', function (e) {
         });
 
         swiper.pagination.render();
-        })
+    })
 })
 
 $$(document).on('page:init', '.page[data-name="cart"]', function (e) {
@@ -227,10 +228,11 @@ function loadSlider(img, index) {
 
 
 function createProduct(prod, index) {
+    console.log(prod)
     var product = '<div class="col-50">';
-        product += '<a href="/product/?id='+prod.sku+'" class="product-block">'
+        product += '<a href="/product/?id='+prod.id+'" class="product-block">'
         product +='<div class="product-image">'
-        product +='<img src="'+ prod.images[0].image_url+'" class="lazy lazy-fade-in">'
+        product +='<img src="'+ prod.image+'" class="lazy lazy-fade-in">'
         product +='</div>'
         product +='<div class="title">'+ prod.title +'</div>'
         product +='<div class="price">$'+ prod.price +'</div>'
@@ -242,7 +244,7 @@ function createProduct(prod, index) {
 function cartProduct(prod, index) {
     $$('.designer').text(prod.designer)
     var product = '<div class="col-50">';
-        product += '<a href="/product/?id='+prod.sku+'" class="product-block">'
+        product += '<a href="/product/?id='+prod.id+'" class="product-block">'
         product +='<div class="product-image">'
         product +='<img src="'+ prod.images[0].image_url+'" class="lazy lazy-fade-in">'
         product +='</div>'
