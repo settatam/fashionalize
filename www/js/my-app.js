@@ -44,6 +44,7 @@ var $$ = Dom7;
 var price, image_url, sku, amount, user_id, name, sku;
 var status = "pending";
 var currency = '$';
+var sub_total = 0;
 
 
 // // If we need to use custom DOM library, let's save it to $$ variable:
@@ -132,8 +133,9 @@ $$(document).on('page:init', '.page[data-name="product"]', function (e) {
 
 $$(document).on('page:init', '.page[data-name="cart"]', function (e) {
     // Do something here for "about" page
+     sub_total = 0;
      app.request.json(FASHION_URL + '/api/cart', function(response){
-        console.log(response)
+        response.forEach(loadCart)
     })
 })
 
@@ -243,6 +245,29 @@ function createProduct(prod, index) {
         product +='</a>'
         product +='</div>'
         $$('#products').append(product);
+}
+
+function loadCart(prod, index) {
+     var item = '<div class="row">';
+         item += '<div class="col-20">';
+         item += '<div class="cart-image">';
+         item += '<img src="'+ prod.image_url+'" />';
+         item += '</div>'
+         item += '</div>'
+         item += '<div class="col-50">'
+         item += '<p> '+ prod.title +'</p>'
+         item += '<p>Color: White</p>'
+         item +=' <p>Size: N/A</p>'
+         item += '</div>';
+         item += '<div class="col-30">';
+         item += '<span class="cart-page-price">$'+ prod.amount+'</span>';
+         item += '<div class="cart-remove"><a href="#">Remove</a></div>'
+         item += '</div>';
+         item += '</div>'
+         item += '</div>';
+         $$('#cart').append(item);
+         sub_total += parseInt(prod.amount)
+         $$('.sub-total').text('$' + sub_total.toFixed(2));
 }
 
 function cartProduct(prod, index) {
