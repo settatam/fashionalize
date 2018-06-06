@@ -8,7 +8,7 @@ var app = new Framework7({
   routes: [
     {
         path: '/',
-        url: 'about.html',
+        url: 'index.html',
     },
     {
       path: '/about/',

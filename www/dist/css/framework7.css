@@ -29021,7 +29021,7 @@ div[class*="col"] {
   width: 30%;
 }
 
-
+.home-page {height: 100vh; background-image: url('../../index.jpg'); background-size: cover; width: 100%;}
 
 .cart-image { width: 100%; }
 .cart-image img {max-width: 100%;}
