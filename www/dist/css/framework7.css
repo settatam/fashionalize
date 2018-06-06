@@ -29022,6 +29022,8 @@ div[class*="col"] {
 }
 
 .home-page {height: 100vh; background-image: url('../../index.jpg'); background-size: cover; width: 100%;}
+.login-buttons {position: absolute; bottom: 25px; width:90%;}
+.login-buttons .button {background-color: #ff2e63; color: #fff; height: 50px; font-weight: bold; border: 1px solid #ff2e63; padding-top: 8px; font-size: 16px}
 
 .cart-image { width: 100%; }
 .cart-image img {max-width: 100%;}
