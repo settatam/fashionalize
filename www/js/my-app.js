@@ -43,7 +43,7 @@ var app = new Framework7({
 });
 
 var token = false;
-var userIsLoggedIn = true;
+var userIsLoggedIn = false;
 
 var FASHION_URL = "https://www.fashionerize.com";
 var LUXE_URL = "https://www.luxesystems.com";
