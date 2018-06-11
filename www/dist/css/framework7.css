@@ -29046,5 +29046,8 @@ padding: 0 15px;}
 .icon-label {width: 30px; height: 30px;}
 .icon-label img {max-width: 100%}
 
-
+.main-hero {height: 300px;}
+.main-hero img {max-width: 100%;}
+.sell-now {background-color: #ff2e63; color: #fff;}
+.sell-now .tabbar-label {color: #fff;}
 
