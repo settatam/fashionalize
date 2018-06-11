@@ -55,6 +55,7 @@ var price, image_url, sku, amount, user_id, name, sku;
 var status = "pending";
 var currency = '$';
 var sub_total = 0;
+var storage = window.localStorage;
 
 
 // // If we need to use custom DOM library, let's save it to $$ variable:
@@ -153,8 +154,8 @@ $$(document).on('page:init', '.page[data-name="home"]', function (e) {
     options = {
             reloadCurrent: true
     }
-    if(userIsLoggedIn) {
-        alert('user is logged in')
+    if(storage.getItem('token') === null) {
+        alert('something')
         mainView.router.navigate('/main/', options)
     }else{
         alert('user is notlogged in')
