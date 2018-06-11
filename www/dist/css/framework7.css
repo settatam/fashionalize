@@ -29043,5 +29043,8 @@ padding: 0 15px;}
 #cart {margin-top: 25px;}
 #cart p {margin: 0; text-align: left;}
 
+.icon-label {width: 30px; height: 30px;}
+.icon-label img {max-width: 100%}
+
 
 
