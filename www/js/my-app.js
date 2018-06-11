@@ -61,47 +61,6 @@ var storage = window.localStorage;
 // // If we need to use custom DOM library, let's save it to $$ variable:
 // var $$ = Dom7;
 
-// // Initialize app
-// var myApp = new Framework7({
-//     root: '#app',
-//     theme: 'auto',
-//     routes: [{
-//         path: '/login-screen/',
-//         content: '\
-//       <div class="page no-navbar no-toolbar no-swipeback">\
-//         <div class="page-content login-screen-content">\
-//           <div class="login-screen-title">My App</div>\
-//           <form>\
-//             <div class="list">\
-//             </div>\
-//             <div class="list">\
-//               <ul>\
-//                 <li><a href="#" class="item-link list-button">Sign In</a></li>\
-//               </ul>\
-//               <div class="block-footer">\
-//                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>\
-//                 <p><a href="#" class="link back">Close Login Screen</a></p>\
-//               </div>\
-//             </div>\
-//           </form>\
-//         </div>\
-//       </div>'
-//     }]
-// });
-
-
-// var ls = myApp.loginScreen.create({ el: '.login-screen' });
-// ls.open(false);
-
-// // Handle Cordova Device Ready Event
-// $$(document).on('deviceready', function() {
-
-// });
-
-// $$('.login-screen').on('loginscreen:open', function (e, loginScreen) {
-//   alert('opening now')
-// });
-
 
 // Now we need to run the code that will be executed only for About page.
 
@@ -155,10 +114,7 @@ $$(document).on('page:init', '.page[data-name="home"]', function (e) {
             reloadCurrent: true
     }
     if(storage.getItem('token') === null) {
-        alert('something')
         mainView.router.navigate('/main/', options)
-    }else{
-        alert('user is notlogged in')
     }
 })
 
