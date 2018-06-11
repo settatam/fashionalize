@@ -6,10 +6,16 @@ var app = new Framework7({
     swipe: 'left',
   },
   routes: [
-    {
-        path: '/',
-        url: 'index.html',
-    },
+   {
+    path: '/foo/',
+    async(routeTo, routeFrom, resolve, reject) {
+      if (userIsLoggedIn) {
+        resolve({ url: 'collection.html' })
+      } else {
+        resolve({ url: 'index.html' })
+      }
+    }
+ },
     {
       path: '/about/',
       url: 'about.html',
@@ -34,6 +40,7 @@ var app = new Framework7({
 });
 
 var token = false;
+var userIsLoggedIn = false;
 
 var FASHION_URL = "https://www.fashionerize.com";
 var LUXE_URL = "https://www.luxesystems.com";
@@ -151,6 +158,7 @@ $$('.sign-up-button').on('click', function(){
         options = {
             reloadCurrent: true
         }
+        userIsLoggedIn = true;
         mainView.router.navigate('collection.html', options)
         app.request.setup({
           headers: {
@@ -170,6 +178,7 @@ $$(document).on('click', '#login-button', function (e) {
         options = {
             reloadCurrent: true
         }
+        userIsLoggedIn = true;
         mainView.router.navigate('/collection/', options)
         app.request.setup({
           headers: {
@@ -177,7 +186,6 @@ $$(document).on('click', '#login-button', function (e) {
             'Authorization': "Bearer " + data.success.token
           }
         })
-        console.log(data.success.token);
         var close = $$('.login-screen-close')
         close.click();
     });
@@ -187,7 +195,6 @@ $$(document).on('click', '#login-button', function (e) {
 $$(document).on('click', '.add-to-cart', function (e) {
     params = {title: title, amount: amount, user_id: user_id, image_url: image_url, sku:sku}
     app.request.post(FASHION_URL + '/api/cart/store', params, function (response) {
-        console.log(response);
         data = JSON.parse(response);
         options = {
             reloadCurrent: true
