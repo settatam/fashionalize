@@ -6,19 +6,18 @@ var app = new Framework7({
     swipe: 'left',
   },
   routes: [
-   {
-    path: '/',
-        async(routeTo, routeFrom, resolve, reject) {
-            if (userIsLoggedIn) {
-                resolve({ url: 'collection.html' })
-            } else {
-                resolve({ url: 'index.html' })
-            }
-        }
+    {
+      path: '/',
+      url: 'index.html',
+        
     },
     {
       path: '/about/',
       url: 'about.html',
+    },
+    {
+      path: '/main/',
+      url: 'main.html',
     },
     {
       path: '/category/',
@@ -108,7 +107,6 @@ var sub_total = 0;
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):
 $$(document).on('page:init', '.page[data-name="collection"]', function (e) {
     app.request.json('https://www.luxesystems.com/api/products', function(response){
-        console.log(response);
         response.forEach(createProduct)
     })
 })
@@ -150,6 +148,19 @@ $$(document).on('page:init', '.page[data-name="cart"]', function (e) {
     })
 })
 
+$$(document).on('page:init', '.page[data-name="home"]', function (e) {
+    // Do something here for "about" page
+    options = {
+            reloadCurrent: true
+    }
+    if(userIsLoggedIn) {
+        alert('user is logged in')
+        mainView.router.navigate('/main/', options)
+    }else{
+        alert('user is notlogged in')
+    }
+})
+
 $$('.sign-up-button').on('click', function(){
     name = $$('#name').val();
     password = $$('#password').val();
@@ -163,7 +174,7 @@ $$('.sign-up-button').on('click', function(){
             reloadCurrent: true
         }
         userIsLoggedIn = true;
-        mainView.router.navigate('collection.html', options)
+        mainView.router.navigate('/main/', options)
         app.request.setup({
           headers: {
             'Accept': 'application/json',
@@ -183,7 +194,7 @@ $$(document).on('click', '#login-button', function (e) {
             reloadCurrent: true
         }
         userIsLoggedIn = true;
-        mainView.router.navigate('/collection/', options)
+        mainView.router.navigate('/main/', options)
         app.request.setup({
           headers: {
             'Accept': 'application/json',
