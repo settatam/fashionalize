@@ -7,18 +7,22 @@ var app = new Framework7({
   },
   routes: [
    {
-    path: '/foo/',
-    async(routeTo, routeFrom, resolve, reject) {
-      if (userIsLoggedIn) {
-        resolve({ url: 'collection.html' })
-      } else {
-        resolve({ url: 'index.html' })
-      }
-    }
- },
+    path: '/',
+        async(routeTo, routeFrom, resolve, reject) {
+            if (userIsLoggedIn) {
+                resolve({ url: 'collection.html' })
+            } else {
+                resolve({ url: 'index.html' })
+            }
+        }
+    },
     {
       path: '/about/',
       url: 'about.html',
+    },
+    {
+      path: '/category/',
+      url: 'category.html',
     },
     {
       path: '/product/',
