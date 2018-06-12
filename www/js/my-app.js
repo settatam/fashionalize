@@ -24,6 +24,10 @@ var app = new Framework7({
       url: 'category.html',
     },
     {
+      path: '/type/',
+      url: 'type.html',
+    },
+    {
       path: '/product/',
       url: 'product.html',
     },
