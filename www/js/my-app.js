@@ -40,6 +40,14 @@ var app = new Framework7({
       url: 'orders.html',
     },
     {
+      path: '/settings/',
+      url: 'settings.html',
+    },
+    {
+      path: '/profile/',
+      url: 'profile.html',
+    },
+    {
       path: '/collection/',
       url: 'collection.html',
     },
