@@ -43,6 +43,10 @@ var app = new Framework7({
       path: '/settings/',
       url: 'settings.html',
     },
+     {
+      path: '/shipping/',
+      url: 'shipping.html',
+    },
     {
       path: '/profile/',
       url: 'profile.html',
