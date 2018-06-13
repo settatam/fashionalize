@@ -79,4 +79,10 @@
         <splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.png" />
     </platform>
     <engine name="browser" spec="~5.0.3" />
+
+    <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
+        <key>NSCameraUsageDescription</key>
+        <string>Camera usage description</string>
+    </edit-config>
+
 </widget>
