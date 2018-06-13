@@ -17,7 +17,6 @@
     <allow-intent href="geo:*" />
     
     <preference name="DisallowOverscroll" value="true" />
-    <preference name="android-minSdkVersion" value="14" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="10000" />
     <preference name="phonegap-version" value="cli-7.1.0" />
@@ -31,7 +30,8 @@
         <allow-intent href="itms-apps:*" />
         <preference name="BackupWebStorage" value="none" />
     </platform>
-    <preference name="DisallowOverscroll" value="true" />
+
+
     <plugin name="cordova-plugin-camera" spec="4.0.3" />
     <plugin name="cordova-plugin-console" spec="1.0.7" />
     <plugin name="cordova-plugin-file" spec="6.0.1" />
