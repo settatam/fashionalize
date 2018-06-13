@@ -80,10 +80,11 @@
     </platform>
     <engine name="browser" spec="~5.0.3" />
 
-    <edit-config file="*-Info.plist" mode="merge">
-        <key>NSCameraUsageDescription</key>
+    <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
         <string>Camera usage description</string>
-        <key> Privacy - Camera Usage Description</key>
+    </edit-config>
+
+    <edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="merge">
         <string>Camera usage description</string>
     </edit-config>
 
