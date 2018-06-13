@@ -15,13 +15,8 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    
     <preference name="DisallowOverscroll" value="true" />
     <preference name="phonegap-version" value="cli-6.5.0" />
-    <!-- <preference name="SplashScreen" value="screen" />
-    <preference name="SplashScreenDelay" value="10000" /> -->
-    <!-- <preference name="phonegap-version" value="cli-8.0.0" /> -->
-
     <platform name="android">
         <preference name="android-minSdkVersion" value="16" />
         <allow-intent href="market:*" />
@@ -31,17 +26,6 @@
         <allow-intent href="itms-apps:*" />
         <preference name="BackupWebStorage" value="none" />
     </platform>
-
-
-    <plugin name="cordova-plugin-camera" spec="4.0.3" />
-    <plugin name="cordova-plugin-console" spec="1.0.7" />
-    <plugin name="cordova-plugin-file" spec="6.0.1" />
-    <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
-    <plugin name="cordova-plugin-statusbar" spec="1.0.1" />
-    <plugin name="cordova-plugin-whitelist" spec="1.2.2" />
-    
-    <engine name="ios" spec="~4.5.4" />
-    <engine name="android" spec="^7.0.0" />
     <platform name="ios">
         <icon height="1024" src="www/res/icon/ios/icon-1024.png" width="1024" />
         <icon height="29" src="www/res/icon/ios/icon-small.png" width="29" />
@@ -70,7 +54,6 @@
         <splash src="www/res/screen/ios/Default@2x~ipad~anyany.png" />
         <splash src="www/res/screen/ios/Default@2x~ipad~comany.png" />
     </platform>
-    
     <platform name="android">
         <preference name="SplashMaintainAspectRatio" value="true" />
         <preference name="SplashShowOnlyFirstTime" value="true" />
@@ -87,22 +70,28 @@
         <splash density="port-xxhdpi" src="www/res/screen/android/splash-port-xxhdpi.png" />
         <splash density="port-xxxhdpi" src="www/res/screen/android/splash-port-xxxhdpi.png" />
     </platform>
-    <engine name="browser" spec="~5.0.3" />
-
-    <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
+    <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
         <string>Camera usage description</string>
     </edit-config>
-
-    <edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="merge">
+    <edit-config file="*-Info.plist" mode="merge" target="NSPhotoLibraryUsageDescription">
         <string>Camera usage description</string>
     </edit-config>
-
-    <gap:config-file platform="ios" parent="NSPhotoLibraryUsageDescription">
+    <gap:config-file parent="NSPhotoLibraryUsageDescription" platform="ios">
         <string>For uploading receipt images</string>
     </gap:config-file>
-
-     <gap:config-file platform="ios" parent="NSCameraUsageDescription">
+    <gap:config-file parent="NSCameraUsageDescription" platform="ios">
         <string>For uploading receipt images</string>
     </gap:config-file>
-
+    <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
+    <plugin name="cordova-plugin-console" spec="~1.0.1" />
+    <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
+    <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
+    <plugin name="cordova-plugin-file" spec="^6.0.1" />
+    <plugin name="cordova-plugin-camera" spec="^4.0.3">
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="My App would like to access your camera, to take photos of your documents." />
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="My App would like to access your camera, to take photos of your documents." />
+    </plugin>
+    <engine name="ios" spec="~4.5.4" />
+    <engine name="android" spec="^7.0.0" />
+    <engine name="browser" spec="^5.0.3" />
 </widget>
