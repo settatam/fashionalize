@@ -200,6 +200,7 @@ $$(document).on('click', '.add-to-wishlist', function (e) {
 })
 
 $$(document).on('click', '.sell-now', function (e) {
+    alert('click camera');
     navigator.camera.getPicture(uploadPhoto,null,{sourceType:1,quality:60});
 })
 
