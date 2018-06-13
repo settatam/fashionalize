@@ -96,4 +96,12 @@
         <string>Camera usage description</string>
     </edit-config>
 
+    <gap:config-file platform="ios" parent="NSPhotoLibraryUsageDescription">
+        <string>For uploading receipt images</string>
+    </gap:config-file>
+
+     <gap:config-file platform="ios" parent="NSCameraUsageDescription">
+        <string>For uploading receipt images</string>
+    </gap:config-file>
+
 </widget>
