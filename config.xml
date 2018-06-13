@@ -78,12 +78,6 @@
         <splash density="port-xxxhdpi" src="www/res/screen/android/splash-port-xxxhdpi.png" />
     </platform>
     
-    <gap:config-file parent="NSPhotoLibraryUsageDescription" platform="ios">
-        <string>For uploading receipt images</string>
-    </gap:config-file>
-    <gap:config-file parent="NSCameraUsageDescription" platform="ios">
-        <string>For uploading receipt images</string>
-    </gap:config-file>
     <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
     <plugin name="cordova-plugin-console" spec="~1.0.1" />
     <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
@@ -91,7 +85,7 @@
     <plugin name="cordova-plugin-file" spec="^6.0.1" />
     <plugin name="cordova-plugin-camera" spec="^4.0.3">
         <variable name="CAMERA_USAGE_DESCRIPTION" value="My App would like to access your camera, to take photos of your documents." />
-        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="My App would like to access your camera, to take photos of your documents." />
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="My App would like to access your camera." />
     </plugin>
     <engine name="ios" spec="~4.5.4" />
     <engine name="android" spec="^7.0.0" />
