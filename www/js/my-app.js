@@ -201,7 +201,7 @@ $$(document).on('click', '.add-to-wishlist', function (e) {
 
 $$(document).on('click', '.sell-now', function (e) {
     alert('click camera');
-    navigator.camera.getPicture(uploadPhoto,null,{sourceType:1,quality:60});
+    navigator.camera.getPicture(uploadPhoto,failedPhoto,{sourceType:1,quality:60});
 })
 
 function showProduct(item, index){
@@ -298,5 +298,9 @@ function getCategory(cat){
 
 function uploadPhoto(data){
     cameraPic.src = "data:image/jpeg;base64," + data;
+}
+
+function failedPhoto(data){
+    alert('there was a problem with the camera')
 }
 
