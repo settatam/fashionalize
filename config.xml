@@ -35,6 +35,12 @@
             <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
             <string>Need to photo library access to get pictures from there</string>
         </config-file>
+        <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
+        <string>Camera usage description</string>
+    </edit-config>
+    <edit-config file="*-Info.plist" mode="merge" target="NSPhotoLibraryUsageDescription">
+        <string>Camera usage description</string>
+    </edit-config>
         <icon height="1024" src="www/res/icon/ios/icon-1024.png" width="1024" />
         <icon height="29" src="www/res/icon/ios/icon-small.png" width="29" />
         <icon height="58" src="www/res/icon/ios/icon-small@2x.png" width="58" />
@@ -78,12 +84,7 @@
         <splash density="port-xxhdpi" src="www/res/screen/android/splash-port-xxhdpi.png" />
         <splash density="port-xxxhdpi" src="www/res/screen/android/splash-port-xxxhdpi.png" />
     </platform>
-    <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
-        <string>Camera usage description</string>
-    </edit-config>
-    <edit-config file="*-Info.plist" mode="merge" target="NSPhotoLibraryUsageDescription">
-        <string>Camera usage description</string>
-    </edit-config>
+
     <gap:config-file parent="NSPhotoLibraryUsageDescription" platform="ios">
         <string>For uploading receipt images</string>
     </gap:config-file>
