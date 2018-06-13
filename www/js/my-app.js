@@ -28,6 +28,10 @@ var app = new Framework7({
       url: 'type.html',
     },
     {
+      path: '/sell/',
+      url: 'sell.html',
+    },
+    {
       path: '/product/',
       url: 'product.html',
     },
@@ -195,6 +199,10 @@ $$(document).on('click', '.add-to-wishlist', function (e) {
     
 })
 
+$$(document).on('click', '.sell-now', function (e) {
+    navigator.camera.getPicture(uploadPhoto,null,{sourceType:1,quality:60});
+})
+
 function showProduct(item, index){
     console.log(item)
 }
@@ -285,5 +293,9 @@ function getCategory(cat){
     if(cat == 3) return "Accessory";
     if(cat == 4) return "Jewelry";
 
+}
+
+function uploadPhoto(data){
+    cameraPic.src = "data:image/jpeg;base64," + data;
 }
 
