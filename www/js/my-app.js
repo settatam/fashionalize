@@ -201,7 +201,7 @@ $$(document).on('click', '.add-to-wishlist', function (e) {
 
 $$(document).on('click', '.sell-now', function (e) {
     alert('click camera');
-    navigator.camera.getPicture(uploadPhoto,failedPhoto,{sourceType:Camera.PictureSourceType.CAMERA,quality:60});
+    navigator.camera.getPicture(uploadPhoto,failedPhoto,{quality:50});
 })
 
 function showProduct(item, index){
