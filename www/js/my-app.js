@@ -208,7 +208,9 @@ function uploadPhoto(fileURL) {
   var options = new FileUploadOptions();
   options.fileKey = "file";
   options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
-  options.mimeType = "text/plain";
+  options.mimeType = "image/jpeg";
+  options.chunkedMode = false;
+  options.headers = {Connection: "close"};
 
   var params = {};
   params.value1 = "test";
