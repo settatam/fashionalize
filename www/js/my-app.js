@@ -219,7 +219,7 @@ function uploadPhoto(fileURL) {
   options.params = params;
 
   var ft = new FileTransfer();
-  ft.upload(fileURL, encodeURI("https://www.fashionerize.com/images/upload"), win, fail, options);
+  ft.upload(fileURL, encodeURI("https://www.fashionerize.com/api/images/upload"), win, fail, options);
 }
 
 var win = function (r) {
