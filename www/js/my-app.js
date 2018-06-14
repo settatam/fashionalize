@@ -209,7 +209,6 @@ function uploadPhoto(imageURI) {
  options.fileKey = "file";
  options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
  options.mimeType = "image/jpeg";
- console.log(options.fileName);
  var params = new Object();
  params.value1 = "test";
  params.value2 = "param";
@@ -218,7 +217,7 @@ function uploadPhoto(imageURI) {
 
  var ft = new FileTransfer();
  ft.upload(imageURI, "https://www.fashionerize.com/api/images/upload", function(result){
- console.log(JSON.stringify(result));
+  alert(result)
  }, function(error){
   alert(error)
   }, options);
