@@ -90,4 +90,12 @@
 <!--     <engine name="ios" spec="~4.5.4" />
     <engine name="android" spec="^7.0.0" />
     <engine name="browser" spec="^5.0.3" /> -->
+    <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
+        <string>Get directions to our shop</string>
+    </edit-config>
+
+    <edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="merge">
+        <string>Get directions to our shop</string>
+    </edit-config>
+
 </widget>
