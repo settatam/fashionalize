@@ -229,7 +229,7 @@ var win = function (r) {
 var fail = function (error) {
     alert("An error has occurred: Code = " + error.code);
     alert("upload error source " + error.source);
-    alert("upload error target " + error.target);
+    console.log("upload error target " + error.target);
 }
 
 function showProduct(item, index){
@@ -322,10 +322,6 @@ function getCategory(cat){
     if(cat == 3) return "Accessory";
     if(cat == 4) return "Jewelry";
 
-}
-
-function uploadPhoto(data){
-    cameraPic.src = "data:image/jpeg;base64," + data;
 }
 
 function failedPhoto(data){
