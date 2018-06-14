@@ -87,10 +87,16 @@
         <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="My App would like to access your camera." />
     </plugin>
     <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
-        <string>Get directions to our shop</string>
+        <string>Take Pictures of your item</string>
     </edit-config>
     <edit-config file="*-Info.plist" mode="merge" target="NSPhotoLibraryUsageDescription">
-        <string>Get directions to our shop</string>
+        <string>Save pictures of your item</string>
+    </edit-config>
+    <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+        <string>need location access to find things nearby</string>
+    </edit-config>
+    <edit-config target="NSPhotoLibraryAddUsageDescription" file="*-Info.plist" mode="merge">
+        <string>Save pictures of your item</string>
     </edit-config>
     <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
 </widget>
