@@ -205,6 +205,7 @@ $$(document).on('click', '.sell-now', function (e) {
 })
 
 function uploadPhoto(imageURI) {
+  alert('uploading photo')
  var options = new FileUploadOptions();
  options.fileKey = "file";
  options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
