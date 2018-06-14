@@ -78,14 +78,14 @@
         <splash density="port-xxhdpi" src="www/res/screen/android/splash-port-xxhdpi.png" />
         <splash density="port-xxxhdpi" src="www/res/screen/android/splash-port-xxxhdpi.png" />
     </platform>
-    <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
-    <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
-    <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
-    <plugin name="cordova-plugin-file" spec="^6.0.1" />
-    <plugin name="cordova-plugin-camera" spec="^4.0.3">
-        <variable name="CAMERA_USAGE_DESCRIPTION" value="My App would like to access your camera, to take photos of your documents." />
-        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="My App would like to access your camera." />
-    </plugin>
+    
+    <plugin name="cordova-plugin-camera" spec="4.0.3" />
+    <plugin name="cordova-plugin-file" spec="6.0.1" />
+    <plugin name="cordova-plugin-file-transfer" spec="1.7.1" />
+    <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
+    <plugin name="cordova-plugin-statusbar" spec="1.0.1" />
+    <plugin name="cordova-plugin-whitelist" spec="1.2.2" />
+
     <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
         <string>Take Pictures of your item</string>
     </edit-config>
@@ -98,5 +98,5 @@
     <edit-config target="NSPhotoLibraryAddUsageDescription" file="*-Info.plist" mode="merge">
         <string>Save pictures of your item</string>
     </edit-config>
-    <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
+    
 </widget>
