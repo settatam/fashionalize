@@ -203,25 +203,34 @@ $$(document).on('click', '.sell-now', function (e) {
     navigator.camera.getPicture(uploadPhoto,failedPhoto,{quality:50, destinationType: Camera.DestinationType.FILE_URI});
 })
 
-function uploadPhoto(imageURI) {
+function uploadPhoto(fileURL) {
   alert('uploading photo')
- var options = new FileUploadOptions();
- options.fileKey = "file";
- options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
- options.mimeType = "image/jpeg";
- var params = new Object();
- params.value1 = "test";
- params.value2 = "param";
- options.params = params;
- options.chunkedMode = false;
+  var options = new FileUploadOptions();
+  options.fileKey = "file";
+  options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
+  options.mimeType = "text/plain";
 
- var ft = new FileTransfer();
- ft.upload(imageURI, "https://www.fashionerize.com/api/images/upload", function(result){
-  alert(result)
- }, function(error){
-  alert(error)
-  }, options);
- }
+  var params = {};
+  params.value1 = "test";
+  params.value2 = "param";
+
+  options.params = params;
+
+  var ft = new FileTransfer();
+  ft.upload(fileURL, encodeURI("https://www.fashionerize.com/images/upload"), win, fail, options);
+}
+
+var win = function (r) {
+    alert("Code = " + r.responseCode);
+    alert("Response = " + r.response);
+    alert("Sent = " + r.bytesSent);
+}
+
+var fail = function (error) {
+    alert("An error has occurred: Code = " + error.code);
+    alert("upload error source " + error.source);
+    alert("upload error target " + error.target);
+}
 
 function showProduct(item, index){
     console.log(item)
