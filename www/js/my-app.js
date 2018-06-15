@@ -203,21 +203,13 @@ $$(document).on('click', '.sell-now', function (e) {
   let cameraOptions = {
     x:0,
     y:0,
-    width: window.screen.width;
+    width: window.screen.width,
     height: window.screen.height-200
   }
     app.loginScreen.open('.sell-item-screen', true);
     CameraPreview.startCamera(cameraOptions);
     //navigator.camera.getPicture(uploadPhoto,failedPhoto,{quality:50, destinationType: Camera.DestinationType.FILE_URI});
 })
-
-let cameraOptions = {
-  x:0,
-  y:0,
-  width: window.screen.width;
-  height: window.screen.height-200
-}
-
 
 function uploadPhoto(fileURL) {
   var options = new FileUploadOptions();
