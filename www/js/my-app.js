@@ -223,9 +223,7 @@ function uploadPhoto(fileURL) {
 }
 
 var win = function (r) {
-    alert("Code = " + r.responseCode);
-    alert("Response = " + r.response);
-    alert("Sent = " + r.bytesSent);
+    app.loginScreen.open('.sell-item-screen', true);
 }
 
 var fail = function (error) {
@@ -266,6 +264,9 @@ function loadAttributes(attr, index) {
 //         }
 //     });
 // })
+$$(document).on('click', '.wishlist-button', function(e){
+  
+})
 
 
 function createProduct(prod, index) {
@@ -328,5 +329,57 @@ function getCategory(cat){
 
 function failedPhoto(data){
     alert('there was a problem with the camera')
+}
+
+function getContent() {
+  content = '\
+    <div class="page no-navbar no-toolbar no-swipeback">\
+        <div class="page-content login-screen-content">\
+          <div class="login-screen-title">My App</div>\
+          <form>\
+            <div class="list">\
+                <ul>\
+                  <li class="item-content item-input">\
+                      <div class="item-inner">\
+                          <div class="item-title item-label">Category</div>\
+                          <div class="item-input">\
+                            <select>\
+                              <option value="0">Choose Category</option>\
+                              <option value="1">Handbags</option>\
+                              <option value="2">Shoes / Heel </option>\
+                              <option value="4"> Accessories </option>\
+                              <option value="5"> Accessories </option>\
+                            </select>\
+                        </div>\
+                      </div>\
+                    </li>\
+                    <li class="item-content item-input">\
+                      <div class="item-inner">\
+                          <div class="item-title item-label">Category</div>\
+                          <div class="item-input">\
+                            <select>\
+                              <option value="0">Choose Designer</option>\
+                              <option value="1">Handbags</option>\
+                              <option value="2">Shoes / Heel </option>\
+                              <option value="4"> Accessories </option>\
+                              <option value="5"> Accessories </option>\
+                            </select>\
+                        </div>\
+                      </div>\
+                    </li>\
+                </ul>\
+            </div>\
+            <div class="list">\
+              <ul>\
+                <li><a href="#" class="item-link list-button">Sign In</a></li>\
+              </ul>\
+              <div class="block-footer">\
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>\
+                <p><a href="#" class="link back">Close Login Screen</a></p>\
+              </div>\
+            </div>\
+          </form>\
+        </div>\
+      </div>'
 }
 
