@@ -210,6 +210,7 @@ function uploadPhoto(fileURL) {
   options.mimeType = "image/jpeg";
   options.chunkedMode = false;
   options.headers = {Connection: "close"};
+  options.httpMethod = 'POST';
 
   var params = {};
   params.value1 = "test";
