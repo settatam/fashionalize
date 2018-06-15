@@ -200,6 +200,7 @@ $$(document).on('click', '.add-to-wishlist', function (e) {
 })
 
 $$(document).on('click', '.sell-now', function (e) {
+    app.loginScreen.open('.sell-item-screen', true);
     navigator.camera.getPicture(uploadPhoto,failedPhoto,{quality:50, destinationType: Camera.DestinationType.FILE_URI});
 })
 
@@ -223,7 +224,7 @@ function uploadPhoto(fileURL) {
 }
 
 var win = function (r) {
-    app.loginScreen.open('.sell-item-screen', true);
+    //app.loginScreen.open('.sell-item-screen', true);
 }
 
 var fail = function (error) {
