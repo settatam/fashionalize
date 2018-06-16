@@ -196,7 +196,7 @@ $$(document).on('click', '.add-to-cart', function (e) {
 })
 
 $$(document).on('click', '.add-to-wishlist', function (e) {
-    
+    myCamera.startCameraAbove();
 })
 
 $$(document).on('click', '.sell-now', function (e) {
@@ -206,9 +206,21 @@ $$(document).on('click', '.sell-now', function (e) {
     width: window.screen.width,
     height: window.screen.height-200
   }
+
     app.loginScreen.open('.sell-item-screen', true);
     CameraPreview.startCamera(cameraOptions);
     //navigator.camera.getPicture(uploadPhoto,failedPhoto,{quality:50, destinationType: Camera.DestinationType.FILE_URI});
+})
+
+$$('#take-picture').on('click', function(){
+  CameraPreview.takePicture(function(imgData){
+    alert('Picture has been taken');
+      //document.getElementById('originalPicture').src = 'data:image/jpeg;base64,' + imgData;
+  });
+})
+
+$$('#close-camera').on('click', function(){
+  CameraPreview.stopCamera();
 })
 
 function uploadPhoto(fileURL) {
@@ -321,4 +333,36 @@ function getCategory(cat){
 
 function failedPhoto(data){
     alert('there was a problem with the camera')
+}
+
+var myCamera = {
+  startCameraAbove: function(){
+    CameraPreview.startCamera({x: 50, y: 50, width: 300, height: 300, toBack: false, previewDrag: true, tapPhoto: true});
+  },
+
+  startCameraBelow: function(){
+    CameraPreview.startCamera({x: 50, y: 50, width: 300, height:300, camera: "front", tapPhoto: true, previewDrag: false, toBack: true});
+  },
+
+  stopCamera: function(){
+    CameraPreview.stopCamera();
+  },
+
+  takePicture: function(){
+    CameraPreview.takePicture(function(imgData){
+      document.getElementById('originalPicture').src = 'data:image/jpeg;base64,' + imgData;
+    });
+  },
+
+  switchCamera: function(){
+    CameraPreview.switchCamera();
+  },
+
+  show: function(){
+    CameraPreview.show();
+  },
+
+  hide: function(){
+    CameraPreview.hide();
+  },
 }
