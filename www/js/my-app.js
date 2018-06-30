@@ -32,7 +32,7 @@ var app = new Framework7({
       url: 'sell.html',
     },
     {
-      path: '/image-uploads/',
+      path: '/image-upload/',
       url: 'image_upload.html',
     },
     {
@@ -264,7 +264,7 @@ function uploadPhoto(fileURL) {
 }
 
 var win = function (r) {
-  alert("your image uploaded")
+  alert(r)
     //app.loginScreen.open('.sell-item-screen', true);
 }
 
