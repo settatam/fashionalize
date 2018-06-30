@@ -32,6 +32,10 @@ var app = new Framework7({
       url: 'sell.html',
     },
     {
+      path: '/image-uploads/',
+      url: 'image_upload.html',
+    },
+    {
       path: '/product/',
       url: 'product.html',
     },
@@ -200,16 +204,17 @@ $$(document).on('click', '.add-to-wishlist', function (e) {
 })
 
 $$(document).on('click', '.sell-now', function (e) {
-  let cameraOptions = {
-    x:0,
-    y:0,
-    width: window.screen.width,
-    height: window.screen.height-200
-  }
+  // let cameraOptions = {
+  //   x:0,
+  //   y:0,
+  //   width: window.screen.width,
+  //   height: window.screen.height-200,
 
-    app.loginScreen.open('.sell-item-screen', true);
-    CameraPreview.startCamera(cameraOptions);
-    //navigator.camera.getPicture(uploadPhoto,failedPhoto,{quality:50, destinationType: Camera.DestinationType.FILE_URI});
+  // }
+
+  //   app.loginScreen.open('.sell-item-screen', true);
+  //   CameraPreview.startCamera(cameraOptions);
+    navigator.camera.getPicture(uploadPhoto,failedPhoto,{quality:50, destinationType: Camera.DestinationType.FILE_URI});
 })
 
 $$('#take-picture').on('click', function(){
@@ -217,6 +222,22 @@ $$('#take-picture').on('click', function(){
     alert('Picture has been taken');
       //document.getElementById('originalPicture').src = 'data:image/jpeg;base64,' + imgData;
   });
+})
+
+$$('.switch-camera').on('click', function(){
+  CameraPreview.switchCamera();
+})
+
+$$('.take-picture').on('click', function(){
+  CameraPreview.switchCamera();
+  params = {title: title, amount: amount, user_id: user_id, image_url: image_url, sku:sku}
+    app.request.post(FASHION_URL + '/api/images/store', params, function (response) {
+        data = JSON.parse(response);
+        options = {
+            reloadCurrent: true
+        }
+        mainView.router.navigate('/cart/', options)
+    });
 })
 
 $$('#close-camera').on('click', function(){
