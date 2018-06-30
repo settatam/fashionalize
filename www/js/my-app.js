@@ -264,7 +264,7 @@ function uploadPhoto(fileURL) {
 }
 
 var win = function (r) {
-  alert(Object.keys(r));
+  alert(r.response);
     //app.loginScreen.open('.sell-item-screen', true);
 }
 
