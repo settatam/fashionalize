@@ -20,7 +20,7 @@ body,
 body {
   margin: 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 16px;
   width: 100%;
   background: #fff;
   overflow: hidden;
@@ -1250,7 +1250,7 @@ html.with-statusbar.device-iphone-x .framework7-root {
 }
 .md .navbar .subtitle {
   line-height: 1.2;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: normal;
   color: rgba(255, 255, 255, 0.85);
 }
@@ -29025,7 +29025,7 @@ div[class*="col"] {
 .home-page {height: 100vh; background-image: url('../../index.jpg'); background-size: cover; width: 100%;}
 .login-buttons {position: absolute; bottom: 0; width:90%; border-top: 1px solid #fff; margin-left: 5%}
 .login-buttons .button {background-color: transparent; color: #fff; height: 50px; font-weight: bold; border: none; padding-top: 8px; font-size: 16px}
-.md .item-label, .md .item-floating-label {font-size: 15px;}
+.md .item-label, .md .item-floating-label {font-size: 16px;}
 .user-login-screen {height: 100vh; background-image: url('../../index.jpg'); background-size: cover; width: 100%;}
 
 .cart-image { width: 100%; }
