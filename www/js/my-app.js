@@ -32,6 +32,10 @@ var app = new Framework7({
       url: 'type.html',
     },
     {
+      path: '/other/',
+      url: 'other.html',
+    },
+    {
       path: '/condition/',
       url: 'condition.html',
     },
@@ -151,6 +155,7 @@ $$(document).on('page:init', '.page[data-name="cart"]', function (e) {
 })
 
 $$(document).on('page:init', '.page[data-name="designer"]', function (e) {
+  alert(categories[item.category])
   $$(document).find('#autocomplete-dropdown-typeahead').focus();
   var autocompleteDropdownSimple = app.autocomplete.create({
   inputEl: '#autocomplete-dropdown-typeahead',
@@ -193,11 +198,15 @@ $$(document).on('page:init', '.page[data-name="home"]', function (e) {
 $$(document).on('click', '.add-category', function(){
   var obj = $$(this);
   item.category = obj.data('id');
+})
+
+$$(document).on('click', '.next', function(){
+  var obj = $$(this);
+  var next_route = obj.data('next');
   options = {
             reloadCurrent: true
   }
-  mainView.router.navigate('/designer/', options)
-  console.log(obj)
+  mainView.router.navigate(next_route, options)
 })
 
 $$('.sign-up-button').on('click', function(){
@@ -1422,3 +1431,5 @@ var designers = [
   "Annabelle Ingall",
   "Altuzarra"
 ]
+
+var categories = ['other', 'handbag', 'shoe', 'apparel', 'jewelry', 'accessory'];
