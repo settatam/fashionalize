@@ -155,8 +155,9 @@ $$(document).on('page:init', '.page[data-name="cart"]', function (e) {
 })
 
 $$(document).on('page:init', '.page[data-name="designer"]', function (e) {
-  alert(categories[item.category])
-  $$(document).find('#autocomplete-dropdown-typeahead').focus();
+  setTimeout(function(){
+    $$(document).find('#autocomplete-dropdown-typeahead').focus();
+  }, 60)
   var autocompleteDropdownSimple = app.autocomplete.create({
   inputEl: '#autocomplete-dropdown-typeahead',
   openIn: 'dropdown',
@@ -271,16 +272,7 @@ $$(document).on('click', '.add-to-wishlist', function (e) {
 })
 
 $$(document).on('click', '.sell-now', function (e) {
-  // let cameraOptions = {
-  //   x:0,
-  //   y:0,
-  //   width: window.screen.width,
-  //   height: window.screen.height-200,
 
-  // }
-
-  //   app.loginScreen.open('.sell-item-screen', true);
-  //   CameraPreview.startCamera(cameraOptions);
     navigator.camera.getPicture(uploadPhoto,failedPhoto,{quality:50, destinationType: Camera.DestinationType.FILE_URI});
 })
 
