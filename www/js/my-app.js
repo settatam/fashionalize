@@ -199,6 +199,8 @@ $$(document).on('page:init', '.page[data-name="home"]', function (e) {
 $$(document).on('click', '.add-category', function(){
   var obj = $$(this);
   item.category = obj.data('id');
+  $$('.add-category').removeClass('on');
+  obj.addClass('on');
 })
 
 $$(document).on('click', '.next', function(){

@@ -43,3 +43,9 @@ a.product-block {color: black; display: block; }
   width: 100px; height: 100px; float: left;
 }
 
+.add-category, .add-condition { margin-bottom: 15px; border: 1px solid #ff2e63; width: 100%; 
+  max-width: 200px; padding: 0 10px; text-align: center; color: #ff2e63; display: block; margin: 15px auto;}
+.md a {color: #ff2e63;}
+a.on {color: white; background-color: #ff2e63;}
+h4.title { font-size: 20px; margin: 15px;}
+
