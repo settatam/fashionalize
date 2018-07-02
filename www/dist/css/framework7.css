@@ -172,7 +172,7 @@ p {
   display: none !important;
 }
 .md a {
-  color: #2196f3;
+  color: #ff2e63;
 }
 .md .theme-dark {
   color: rgba(255, 255, 255, 0.87);
@@ -184,7 +184,7 @@ p {
   color: #4caf50;
 }
 .md .color-theme-blue a {
-  color: #2196f3;
+  color: #ff2e63;
 }
 .md .color-theme-pink a {
   color: #e91e63;
@@ -211,7 +211,7 @@ p {
   color: #4caf50;
 }
 .md a.color-blue {
-  color: #2196f3;
+  color: #ff2e63;
 }
 .md a.color-pink {
   color: #e91e63;
@@ -1182,7 +1182,7 @@ html.with-statusbar.device-iphone-x .framework7-root {
 }
 .md .navbar {
   height: 56px;
-  background: #2196f3;
+  background: #f7f7f8;
   color: #fff;
   font-size: 20px;
 }
@@ -1308,7 +1308,7 @@ html.with-statusbar.device-iphone-x .framework7-root {
 }
 .md .color-theme-blue .navbar,
 .md .color-theme-blue.navbar {
-  background: #2196f3;
+  background: #f7f7f8;
 }
 .md .color-theme-pink .navbar,
 .md .color-theme-pink.navbar {
@@ -1341,7 +1341,7 @@ html.with-statusbar.device-iphone-x .framework7-root {
   background: #4caf50;
 }
 .md .navbar.color-blue {
-  background: #2196f3;
+  background: #f7f7f8;
 }
 .md .navbar.color-pink {
   background: #e91e63;
@@ -1845,7 +1845,7 @@ html.with-statusbar.device-iphone-x .framework7-root {
   }
 }
 .md .toolbar {
-  background: #2196f3;
+  background: #f7f7f8;
   height: 48px;
   color: #fff;
   font-size: 14px;
@@ -2107,7 +2107,7 @@ html.with-statusbar.device-iphone-x .framework7-root {
 }
 .md .color-theme-blue .toolbar:not(.messagebar),
 .md .color-theme-blue.toolbar:not(.messagebar) {
-  background: #2196f3;
+  background: #f7f7f8;
 }
 .md .color-theme-pink .toolbar:not(.messagebar),
 .md .color-theme-pink.toolbar:not(.messagebar) {
@@ -2140,7 +2140,7 @@ html.with-statusbar.device-iphone-x .framework7-root {
   background: #4caf50;
 }
 .md .toolbar:not(.messagebar).color-blue {
-  background: #2196f3;
+  background: #f7f7f8;
 }
 .md .toolbar:not(.messagebar).color-pink {
   background: #e91e63;
@@ -2467,7 +2467,7 @@ html.with-statusbar.device-iphone-x .framework7-root {
 }
 .md .subnavbar {
   height: 48px;
-  background: #2196f3;
+  background: #f7f7f8;
   color: #fff;
 }
 .md .subnavbar:after {
@@ -2596,7 +2596,7 @@ html.with-statusbar.device-iphone-x .framework7-root {
 }
 .md .color-theme-blue .subnavbar,
 .md .color-theme-blue.subnavbar {
-  background: #2196f3;
+  background: #f7f7f8;
 }
 .md .color-theme-pink .subnavbar,
 .md .color-theme-pink.subnavbar {
@@ -2629,7 +2629,7 @@ html.with-statusbar.device-iphone-x .framework7-root {
   background: #4caf50;
 }
 .md .subnavbar.color-blue {
-  background: #2196f3;
+  background: #f7f7f8;
 }
 .md .subnavbar.color-pink {
   background: #e91e63;
