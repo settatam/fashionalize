@@ -251,7 +251,7 @@ $$('.sign-up-button').on('click', function(){
         })
     });
 })
-//Sign UP
+
 
 $$(document).on('click', '#login-button', function (e) {
     email = $$('#login-email').val();

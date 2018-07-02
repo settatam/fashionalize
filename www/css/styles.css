@@ -40,7 +40,7 @@ a.product-block {color: black; display: block; }
 
 .images-row { position: absolute; bottom: 0; border: 1px solid #ccc; height: 100px; width: 100%;}
 .slide-photo {
-  width: 100px; height: 100px; float: left;
+  width: 60px; height: 60px; float: left; background-color: white;
 }
 
 .add-category, .add-condition, .add-age { margin-bottom: 15px; border: 1px solid #ff2e63; width: 100%; 
