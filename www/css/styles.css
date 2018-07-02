@@ -38,10 +38,12 @@ a.product-block {color: black; display: block; }
 
 /*Image Slide*/
 
-.images-row { position: absolute; bottom: 60px; border: 1px solid #ccc; height: 100px; width: 100%; padding: 15px;}
+.images-row { position: absolute; bottom: 60px; border: 1px solid #ccc; height: 100px; padding: 15px;}
 .slide-photo {
-  width: 75px; height: 75px; float: left; background-color: #ccc; border: 1px solid #ccc; margin-right: 10px;
+  width: 60px; height: 60px; float: left; background-color: #ccc; border: 1px solid #ccc; margin-right: 10px;
 }
+
+.uploaded-image{ width: 250px; height: 250px; margin: 40px auto; border: 1px solid #ccc;}
 
 .add-category, .add-condition, .add-age { margin-bottom: 15px; border: 1px solid #ff2e63; width: 100%; 
   max-width: 200px; padding: 0 10px; text-align: center; color: #ff2e63; display: block; margin: 15px auto;}
@@ -50,4 +52,5 @@ a.on {color: white; background-color: #ff2e63;}
 h4.title { font-size: 20px; margin: 15px;}
 .ios a {color: #ff2e63;}
 .ios a.on {color: white; background-color: #ff2e63;}
+.image-intro {margin: 40px;}
 
