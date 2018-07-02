@@ -345,7 +345,8 @@ var win = function (r) {
   user_images.push(r.response);
   images_length = user_images.length;
   var all_images = $$(document).find('.slide-photo');
-  image_string = '<img src="https://www.fashionerize.com/images'+r.response +'" />';
+  image_string = '<img src="https://www.fashionerize.com/images/'+r.response +'" />';
+  alert(image_string);
   current_photo = all_images.eq(images_length).html(image_string);
   $$('.uploaded-image').html(image_string);
   if(user_images.length == 4) {
