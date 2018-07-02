@@ -44,6 +44,10 @@ var app = new Framework7({
       url: 'sell.html',
     },
     {
+      path: '/age/',
+      url: 'age.html',
+    },
+    {
       path: '/designer/',
       url: 'designer.html',
     },
@@ -118,7 +122,6 @@ $$(document).on('page:init', '.page[data-name="collection"]', function (e) {
 })
 
 $$(document).on('page:init', '.page[data-name="product"]', function (e) {
-    console.log(mainView.router.currentRoute.query.id)
     app.request.json('https://www.luxesystems.com/api/products/'+mainView.router.currentRoute.query.id, function(response){
          $$('.product-description').text(response.OverallConditionDescription)
          $$('.price').text('$'+response.price) 
@@ -174,7 +177,12 @@ $$(document).on('page:init', '.page[data-name="designer"]', function (e) {
       if (designers[i].toLowerCase().indexOf(query.toLowerCase()) >= 0) results.push(designers[i]);
     }
     render(results);
-  }
+  },
+  on: {
+    change: function (value) {
+     item.designer = value[0];
+    },
+  },
 });
 })
 
@@ -200,6 +208,20 @@ $$(document).on('click', '.add-category', function(){
   var obj = $$(this);
   item.category = obj.data('id');
   $$('.add-category').removeClass('on');
+  obj.addClass('on');
+})
+
+$$(document).on('click', '.add-condition', function(){
+  var obj = $$(this);
+  item.condition = obj.data('id');
+  $$('.add-condition').removeClass('on');
+  obj.addClass('on');
+})
+
+$$(document).on('click', '.add-age', function(){
+  var obj = $$(this);
+  item.age = obj.data('id');
+  $$('.add-age').removeClass('on');
   obj.addClass('on');
 })
 
