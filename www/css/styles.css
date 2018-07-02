@@ -44,6 +44,7 @@ a.product-block {color: black; display: block; }
 }
 
 .uploaded-image{ width: 250px; height: 250px; margin: 40px auto; border: 1px solid #ccc;}
+.uploaded-image img, .slide-photo img {max-width: 100%;}
 
 .add-category, .add-condition, .add-age { margin-bottom: 15px; border: 1px solid #ff2e63; width: 100%; 
   max-width: 200px; padding: 0 10px; text-align: center; color: #ff2e63; display: block; margin: 15px auto;}
