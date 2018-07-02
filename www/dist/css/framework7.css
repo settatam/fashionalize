@@ -276,7 +276,7 @@ html.with-statusbar.device-iphone-x .framework7-root {
   background-color: #1b1b1b;
 }
 .md .statusbar {
-  background: #0a6ebd;
+  background: #f7f7f8;
 }
 .md .color-theme-red .statusbar {
   background: #d2190b;
@@ -285,7 +285,7 @@ html.with-statusbar.device-iphone-x .framework7-root {
   background: #357a38;
 }
 .md .color-theme-blue .statusbar {
-  background: #0a6ebd;
+  background: #f7f7f8;
 }
 .md .color-theme-pink .statusbar {
   background: #aa1145;
