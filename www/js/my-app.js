@@ -108,8 +108,6 @@ image_responses = ["Add your first picture. Pointer: Upload a full frontal image
                   "Add your third picture. Pointer: Takea picture of the auth tags if you have any.",  
                   "Add your fourth picture. Pointer: a picture of any scuffings or scrapes"];
 
-// // If we need to use custom DOM library, let's save it to $$ variable:
-// var $$ = Dom7;
 
 
 // Now we need to run the code that will be executed only for About page.
@@ -150,7 +148,6 @@ $$(document).on('page:init', '.page[data-name="product"]', function (e) {
 })
 
 $$(document).on('page:init', '.page[data-name="cart"]', function (e) {
-    // Do something here for "about" page
      sub_total = 0;
      app.request.json(FASHION_URL + '/api/cart', function(response){
         response.forEach(loadCart)
@@ -187,7 +184,6 @@ $$(document).on('page:init', '.page[data-name="designer"]', function (e) {
 })
 
 $$(document).on('page:init', '.page[data-name="cart"]', function (e) {
-    // Do something here for "about" page
      sub_total = 0;
      app.request.json(FASHION_URL + '/api/cart', function(response){
         response.forEach(loadCart)
@@ -195,7 +191,6 @@ $$(document).on('page:init', '.page[data-name="cart"]', function (e) {
 })
 
 $$(document).on('page:init', '.page[data-name="home"]', function (e) {
-    // Do something here for "about" page
     options = {
             reloadCurrent: true
     }
