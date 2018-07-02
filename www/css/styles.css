@@ -38,9 +38,9 @@ a.product-block {color: black; display: block; }
 
 /*Image Slide*/
 
-.images-row { position: absolute; bottom: 0; border: 1px solid #ccc; height: 100px; width: 100%;}
+.images-row { position: absolute; bottom: 60px; border: 1px solid #ccc; height: 100px; width: 100%; padding: 15px;}
 .slide-photo {
-  width: 60px; height: 60px; float: left; background-color: white;
+  width: 75px; height: 75px; float: left; background-color: #ccc; border: 1px solid #ccc; margin-right: 10px;
 }
 
 .add-category, .add-condition, .add-age { margin-bottom: 15px; border: 1px solid #ff2e63; width: 100%; 
