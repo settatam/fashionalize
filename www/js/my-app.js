@@ -443,6 +443,8 @@ function failedPhoto(data){
     alert('there was a problem with the camera')
 }
 
+// all designers
+
 var designers = [
   "1883",
   "Ella Moss",
