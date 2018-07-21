@@ -823,6 +823,8 @@ html.with-statusbar.device-iphone-x .framework7-root {
   margin: 0;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+  background-color: #ff2e63 !important;
+  color: #fff !important;
 }
 .navbar b {
   font-weight: 500;
@@ -1183,7 +1185,7 @@ html.with-statusbar.device-iphone-x .framework7-root {
 .md .navbar {
   height: 56px;
   background: #ff2e63;
-  color: #222;
+  color: #fff;
   font-size: 20px;
 }
 .md .navbar:after {
