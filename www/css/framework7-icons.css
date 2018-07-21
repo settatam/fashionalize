@@ -28,4 +28,11 @@
   -moz-font-feature-settings: "liga";
   font-feature-settings: "liga";
   text-align: center;
+  color: #000;
 }
+
+.first-tab { padding-top: 5px; }
+.second-tab { padding-top: 8px; }
+.third-tab { padding-top: 5px; }
+.fourth-tab { padding-top: 5px; }
+.fifth-tab { padding-top: 5px; }
