@@ -825,6 +825,7 @@ html.with-statusbar.device-iphone-x .framework7-root {
   transform: translate3d(0, 0, 0);
   background-color: #ff2e63 !important;
   color: #fff !important;
+  padding: 0 10px;
 }
 .navbar b {
   font-weight: 500;
