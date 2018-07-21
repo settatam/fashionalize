@@ -36,3 +36,6 @@
 .third-tab { padding-top: 5px; }
 .fourth-tab { padding-top: 5px; }
 .fifth-tab { padding-top: 5px; }
+
+.main-image img.shoes-img {max-width: 60%; height: 30px; margin-top: 20px;}
+.main-image img.acc-img   {max-width: 60%; height: 35px; margin-top: 16px;}
