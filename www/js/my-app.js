@@ -9,7 +9,6 @@ var app = new Framework7({
     {
       path: '/',
       url: 'index.html',
-        
     },
     {
       path: '/about/',
@@ -87,8 +86,6 @@ var app = new Framework7({
 });
 
 var token = false;
-var userIsLoggedIn = false;
-
 var FASHION_URL = "https://www.fashionerize.com";
 var LUXE_URL = "https://www.luxesystems.com";
 
@@ -100,6 +97,7 @@ var status = "pending";
 var currency = '$';
 var sub_total = 0;
 var storage = window.localStorage;
+var userIsLoggedIn = storage.getItem('token') !== null ? true : false;
 var user_images = [];
 let quotes = [];
 var item = {};
@@ -191,12 +189,16 @@ $$(document).on('page:init', '.page[data-name="cart"]', function (e) {
 })
 
 $$(document).on('page:init', '.page[data-name="home"]', function (e) {
-    options = {
-            reloadCurrent: true
+    if(!userIsLoggedIn) {
+      app.loginScreen.create('.user-login-screen');
+      app.loginScreen.open('.user-login-screen');
     }
-    if(storage.getItem('token') === null) {
-        mainView.router.navigate('/main/', options)
-    }
+    // options = {
+    //         reloadCurrent: true
+    // }
+    // if(storage.getItem('token') === null) {
+    //     mainView.router.navigate('/main/', options)
+    // }
 })
 
 $$(document).on('click', '.add-category', function(){
@@ -242,7 +244,7 @@ $$('.sign-up-button').on('click', function(){
             reloadCurrent: true
         }
         userIsLoggedIn = true;
-        mainView.router.navigate('/main/', options)
+        //mainView.router.navigate('/main/', options)
         app.request.setup({
           headers: {
             'Accept': 'application/json',
@@ -252,6 +254,7 @@ $$('.sign-up-button').on('click', function(){
     });
 })
 
+//Login
 
 $$(document).on('click', '#login-button', function (e) {
     email = $$('#login-email').val();
@@ -263,6 +266,7 @@ $$(document).on('click', '#login-button', function (e) {
         }
         userIsLoggedIn = true;
         mainView.router.navigate('/main/', options)
+        storage.setItem('token', data.success.token)
         app.request.setup({
           headers: {
             'Accept': 'application/json',
@@ -273,6 +277,14 @@ $$(document).on('click', '#login-button', function (e) {
         close.click();
     });
     
+})
+
+
+//Logout
+$$(document).on('click', '.logout', function (e) {
+    storage.removeItem('token');
+    userIsLoggedIn = false;
+    mainView.router.navigate('/');
 })
 
 $$(document).on('click', '.add-to-cart', function (e) {

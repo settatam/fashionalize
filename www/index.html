@@ -35,7 +35,7 @@
               <li><a href="gallery.html" class="gallery">GALLERY</a></li>
               <li><a href="contact.html" class="contact">CONTACT</a></li>
             </ul>
-      </div>
+          </div>
       </div>
       <div class="statusbar"></div>
 
@@ -44,7 +44,94 @@
         <!-- Initial Page, "data-name" contains page name -->
         <div data-name="home" class="page">
           <!-- Scrollable page content -->
+          <div class="navbar">
+            <div class="navbar-inner">
+                <div class="center sliding">Categories</div>
+                <div class="right">
+                    <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                </div>
+            </div>
+          </div>
+           <div class="toolbar tabbar-labels toolbar-bottom-md">
+            <div class="toolbar-inner">
+              <a href="/main/" class="tab-link tab-link-active">
+                <i class="f7-icons size-22 first-tab">home</i>
+                <span class="tabbar-label">Home</span>
+              </a>
+              <a href="#" class="tab-link tab-link-active wishlist-button">
+                <i class="f7-icons size-22 second-tab">heart</i>
+                <span class="tabbar-label">Wishlist</span>
+              </a>
+              <a class="tab-link sell-no" href='/what-to-sell/'>
+                <i class="f7-icons size-22 third-tab">money_dollar_fill</i>
+                <span class="tabbar-label">Sell</span>
+              </a>
+              <a href="/cart/" class="tab-link">
+                <i class="f7-icons size-22 fourth-tab">bag</i>
+                <span class="tabbar-label">Cart</span>
+              </a>
+              <a href="/settings/" class="tab-link tab-link-active">
+                <i class="f7-icons size-22 fifth-tab">more</i>
+                <span class="tabbar-label">Settings</span>
+              </a>
+            </div>
+        </div> 
           <div class="home-page page-content">
+            <div class="content-block">
+              <div class="hero main-hero">
+                <img src="hero.jpg" />
+              </div>
+            </div>
+            <div class="row padding-15">
+              <div class="col-33">
+                <a href="/category/?id=1" class="main-link">
+                  <div class="main-image">
+                    <img src="women.png">
+                  </div>
+                  <span> Women </span>
+                </a>
+              </div>
+              <div class="col-33">
+                <a href="/category/?id=2" class="main-link">
+                  <div class="main-image">
+                    <img src="men.png">
+                  </div>
+                  <span> Men </span>
+                </a>
+              </div>
+              <div class="col-33">
+                <a href="/types/?id=1" class="main-link">
+                  <div class="main-image">
+                    <img src="handbags.jpg">
+                  </div>
+                  <span> Handbags </span>
+                </a>
+              </div>
+              <div class="col-33">
+                <a href="/types/?id=2" class="main-link">
+                  <div class="main-image">
+                    <img src="shoes.png" class="shoes-img">
+                  </div>
+                  <span> Shoes </span>
+                </a>
+              </div>
+              <div class="col-33">
+                <a href="/types/?id=4" class="main-link">
+                  <div class="main-image">
+                    <img src="jewelries.png">
+                  </div>
+                  <span> Jewelries </span>
+                </a>
+              </div>
+              <div class="col-33"> 
+                <a href="/types/?id=5" class="main-link">
+                  <div class="main-image">
+                    <img src="accessories.png" class="acc-img">
+                  </div>
+                  <span> Accessories </span>
+                </a>
+              </div>
+            </div>
             <p><a href="/main/" class="button">Go to Main</a></p>
             <div class="row login-buttons">
                 <div class="col-50">
