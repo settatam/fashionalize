@@ -72,11 +72,11 @@ var app = new Framework7({
     },
      {
       path: '/shipping/',
-      url: 'shipping.html',
+      url: 'pages/settings/shipping.html',
     },
     {
       path: '/profile/',
-      url: 'profile.html',
+      url: 'pages/settings/profile.html',
     },
     {
       path: '/collection/',
@@ -97,20 +97,53 @@ var status = "pending";
 var currency = '$';
 var sub_total = 0;
 var storage = window.localStorage;
-var userIsLoggedIn = storage.getItem('token') !== null ? true : false;
 var user_images = [];
 let quotes = [];
 var item = {};
+var user = storage.getItem('user') !== null ? storage.getItem('user') : {};
+var items_to_sell = [];
+var current_item = {};
+var item_additions = [];
+
+if(storage.getItem('token') !== null) {
+  userIsLoggedIn = true;
+  token = storage.getItem('token');
+  user = JSON.parse(storage.getItem('user'));
+   app.request.setup({
+      headers: {
+        'Accept': 'application/json',
+        'Authorization': "Bearer " + token
+      }
+    })
+}else{
+  userIsLoggedIn = false;
+}
+
+
 image_responses = ["Add your first picture. Pointer: Upload a full frontal image of your item", 
                   "Add your second picture. Pointer: Take a picture of the opposite side of your item", 
                   "Add your third picture. Pointer: Takea picture of the auth tags if you have any.",  
                   "Add your fourth picture. Pointer: a picture of any scuffings or scrapes"];
 
 
+//Pages
 
-// Now we need to run the code that will be executed only for About page.
+//Home Page
+$$(document).on('page:init', '.page[data-name="home"]', function (e) {
+    if(!userIsLoggedIn) {
+      app.loginScreen.create('.user-login-screen');
+      app.loginScreen.open('.user-login-screen');
+    }
+})
 
-// Option 1. Using page callback for page (for "about" page in this case) (recommended way):
+//Cart Page
+$$(document).on('page:init', '.page[data-name="cart"]', function (e) {
+     sub_total = 0;
+     app.request.json(FASHION_URL + '/api/cart', function(response){
+        response.forEach(loadCart)
+    })
+})
+
 $$(document).on('page:init', '.page[data-name="collection"]', function (e) {
     app.request.json('https://www.luxesystems.com/api/products', function(response){
         response.forEach(createProduct)
@@ -175,55 +208,55 @@ $$(document).on('page:init', '.page[data-name="designer"]', function (e) {
   },
   on: {
     change: function (value) {
-     item.designer = value[0];
+     current_item.designer = value[0];
     },
   },
-});
+  });
 })
 
-$$(document).on('page:init', '.page[data-name="cart"]', function (e) {
+$$(document).on('page:init', '.page[data-name="shipping"]', function (e) {
      sub_total = 0;
-     app.request.json(FASHION_URL + '/api/cart', function(response){
-        response.forEach(loadCart)
+     app.request.json(FASHION_URL + '/api/shipping-address', function(response){
+        response.forEach(shippingAddress)
     })
 })
 
-$$(document).on('page:init', '.page[data-name="home"]', function (e) {
-    if(!userIsLoggedIn) {
-      app.loginScreen.create('.user-login-screen');
-      app.loginScreen.open('.user-login-screen');
-    }
-    // options = {
-    //         reloadCurrent: true
-    // }
-    // if(storage.getItem('token') === null) {
-    //     mainView.router.navigate('/main/', options)
-    // }
-})
+//End pages
 
 $$(document).on('click', '.add-category', function(){
   var obj = $$(this);
   item.category = obj.data('id');
   $$('.add-category').removeClass('on');
   obj.addClass('on');
+  current_item.category = obj.data('id');
 })
 
 $$(document).on('click', '.add-condition', function(){
   var obj = $$(this);
-  item.condition = obj.data('id');
   $$('.add-condition').removeClass('on');
   obj.addClass('on');
+  current_item.condition = obj.data('id');
 })
 
 $$(document).on('click', '.add-age', function(){
   var obj = $$(this);
-  item.age = obj.data('id');
+  current_item.age = obj.data('id');
   $$('.add-age').removeClass('on');
   obj.addClass('on');
 })
 
 $$(document).on('click', '.next', function(){
   var obj = $$(this);
+  if(obj.hasClass('process-other-data')) {
+    var chk_arr =  document.getElementsByName("addition");
+    var chklength = chk_arr.length;
+    
+    for(k=0;k< chklength;k++){
+      if(chk_arr[k].checked) item_additions.push(chk_arr[k].value)
+    }
+    current_item.date_code = $$('#date_code').val();
+    current_item.additions = item_additions;
+  }
   var next_route = obj.data('next');
   options = {
             reloadCurrent: true
@@ -265,8 +298,13 @@ $$(document).on('click', '#login-button', function (e) {
             reloadCurrent: true
         }
         userIsLoggedIn = true;
-        mainView.router.navigate('/main/', options)
+        //mainView.router.navigate('/', options)
         storage.setItem('token', data.success.token)
+        user = {};
+        user.id = data.success.user.id;
+        user.name = data.success.user.name;
+        storage.setItem('user', JSON.stringify(user));
+        app.loginScreen.close('.user-login-screen')
         app.request.setup({
           headers: {
             'Accept': 'application/json',
@@ -278,6 +316,26 @@ $$(document).on('click', '#login-button', function (e) {
     });
     
 })
+
+//Show shipping form
+
+$$(document).on('click', '.create-new-shipping', function(e){
+  app.loginScreen.open('.add-shipping-address');
+  $$('#shipping-user-id').val(user.id);
+})
+
+//Save shipping info
+
+$$(document).on('click', '.save-shipping-address', function(){
+  var formData = app.form.convertToData('#user-shipping-address');
+    app.request.post(FASHION_URL + '/api/shipping-address/store', formData, function (response) {
+      $$('.shipping-address-list').html('');
+      console.log(response)
+        response = JSON.parse(response)
+        response.forEach(shippingAddress)
+        app.loginScreen.close('.add-shipping-address');
+    });
+});
 
 
 //Logout
@@ -392,6 +450,7 @@ $$(document).on('click', '.wishlist-button', function(e){
   app.loginScreen.open('.sell-item-screen', true);
 })
 
+//Load content in pages
 
 function createProduct(prod, index) {
     var product = '<div class="col-50">';
@@ -441,6 +500,26 @@ function cartProduct(prod, index) {
         product +='</a>'
         product +='</div>'
         $$('#products').append(product);
+}
+
+function shippingAddress(prod, index) {
+
+  var html =  '<li>\
+              <a href="#" class="item-link item-content">\
+                  <div class="item-inner">\
+                    <div class="item-title">\
+                        <div class="item-header">' + prod.nickname + '</div>\
+                          <p> '+ prod.address +'</p>\
+                          <p> '+ prod.address2 +'</p>\
+                          <p> '+ prod.state +' '+ prod.zip +'</p>\
+                          <p> '+ prod.country +'</p>\
+                        </div>\
+                      <div class="item-after">Edit</div>\
+                  </div>\
+              </a>\
+          </li>'
+  $$('.shipping-address-list').append(html).show();
+
 }
 
 function getCategory(cat){

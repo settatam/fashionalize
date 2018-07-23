@@ -29029,7 +29029,7 @@ div[class*="col"] {
 .login-buttons {position: absolute; bottom: 0; width:90%; border-top: 1px solid #fff; margin-left: 5%}
 .login-buttons .button {background-color: transparent; color: #fff; height: 50px; font-weight: bold; border: none; padding-top: 8px; font-size: 16px}
 .md .item-label, .md .item-floating-label {font-size: 16px;}
-.user-login-screen {height: 100vh; background-image: url('../../index.jpg'); background-size: cover; width: 100%;}
+.user-login-screen {height: 100vh;width: 100%;}
 
 .cart-image { width: 100%; }
 .cart-image img {max-width: 100%;}
