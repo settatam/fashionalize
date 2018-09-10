@@ -261,10 +261,20 @@ $$(document).on('page:init', '.page[data-name="shipping"]', function (e) {
 
 $$(document).on('click', '.convert-form-to-data', function(){
   var formData = app.form.convertToData('#my-form');
-  //alert(JSON.stringify(formData));
-  app.request.json(FASHION_URL + '/api/items/store', function(response){
-      //response.forEach(shippingAddress)
-  })
+  var category = 2;
+  var designer = "Chanel";
+  var age = 3;
+  var date_code = 3;
+  var additions = ['clothes', 'shoes'];
+  
+  params = {category: category, designer: designer, age: age, date_code: date_code, style:style, additions:additions}
+    app.request.post(FASHION_URL + '/api/sell/store', params, function (response) {
+        data = JSON.parse(response);
+        options = {
+            reloadCurrent: true
+        }
+        mainView.router.navigate('/cart/', options)
+    });
 });
 
 //End pages
