@@ -266,15 +266,19 @@ $$(document).on('click', '.convert-form-to-data', function(){
   var age = 3;
   var date_code = 3;
   var additions = ['clothes', 'shoes'];
-  
-  params = {category: category, designer: designer, age: age, date_code: date_code, style:style, additions:additions}
-    app.request.post(FASHION_URL + '/api/sell/store', params, function (response) {
-        data = JSON.parse(response);
-        options = {
+  options = {
             reloadCurrent: true
         }
-        mainView.router.navigate('/cart/', options)
-    });
+  mainView.router.navigate('/image-upload/', options)
+  
+  //params = {category: category, designer: designer, age: age, date_code: date_code, style:style, additions:additions}
+    //app.request.post(FASHION_URL + '/api/sell/store', params, function (response) {
+        //data = JSON.parse(response);
+        //options = {
+            //reloadCurrent: true
+        //}
+        //mainView.router.navigate('/cart/', options)
+    //});
 });
 
 //End pages
