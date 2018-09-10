@@ -422,7 +422,8 @@ $$(document).on('click', '.add-to-wishlist', function (e) {
 
 $$(document).on('click', '.sell-now', function (e) {
 
-    navigator.camera.getPicture(uploadPhoto,failedPhoto,{quality:50, destinationType: Camera.DestinationType.FILE_URI});
+    navigator.camera.getPicture(uploadPhoto,
+                                edPhoto,{quality:50, destinationType: Camera.DestinationType.FILE_URI});
 })
 
 $$('#take-picture').on('click', function(){
@@ -453,6 +454,7 @@ $$('#close-camera').on('click', function(){
 })
 
 function uploadPhoto(fileURL) {
+  alert(fileURL);
   var options = new FileUploadOptions();
   options.fileKey = "file";
   options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
@@ -473,7 +475,6 @@ function uploadPhoto(fileURL) {
 
 var win = function (r) {
   user_images.push(r.response);
-  alert(r.reponse);
   images_length = user_images.length;
   var all_images = $$(document).find('.slide-photo');
   image_string = '<img src="https://www.fashionerize.com/images/'+r.response +'" />';
@@ -487,9 +488,12 @@ var win = function (r) {
 }
 
 var fail = function (error) {
-    alert("An error has occurred: Code = " + error.code);
-    alert("upload error source " + error.source);
-    alert("upload error target " + error.target);
+    alert('An error occured! You image could not be uploaded. Please try again');
+}
+
+function cameraCallback(imageData) {
+   var image = document.getElementById('myImage');
+   image.src = "data:image/jpeg;base64," + imageData;
 }
 
 function showProduct(item, index){
