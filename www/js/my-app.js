@@ -214,6 +214,44 @@ $$(document).on('page:init', '.page[data-name="designer"]', function (e) {
   });
 })
 
+$$(document).on('page:init', '.page[data-name="other"]', function(e){
+  var autocompleteStandaloneSimple = app.autocomplete.create({
+  openIn: 'page', //open in page
+  openerEl: '#autocomplete-standalone', //link that opens autocomplete
+  closeOnSelect: true, //go back after we select something
+  source: function (query, render) {
+    var results = [];
+    if (query.length === 0) {
+      render(results);
+      return;
+    }
+    // Find matched items
+    for (var i = 0; i < designers.length; i++) {
+      if (designers[i].toLowerCase().indexOf(query.toLowerCase()) >= 0) results.push(designers[i]);
+    }
+    // Render items by passing array with result items
+    render(results);
+  },
+  on: {
+    change: function (value) {
+      console.log(value);
+      // Add item text value to item-after
+      $$('#autocomplete-standalone').find('.item-after').text(value[0]);
+      // Add item value to input value
+      $$('#autocomplete-standalone').find('input').val(value[0]);
+    },
+  },
+});
+})
+
+$$(document).on('change', '#category', function(e){
+  app.router.back()
+})
+
+$$(document).on('change', '#age', function(e){
+  app.router.back()
+})
+
 $$(document).on('page:init', '.page[data-name="shipping"]', function (e) {
      sub_total = 0;
      app.request.json(FASHION_URL + '/api/shipping-address', function(response){

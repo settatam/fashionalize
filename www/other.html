@@ -15,17 +15,56 @@
             <div class="content-block">
                 <form class="list" id="my-form">
                   <ul>
-                    <ul>
-                            <li class="item-content item-input">
-                              <div class="item-inner">
-                                <div class="item-title item-label">Designer </div>
-                                <div class="item-input-wrap">
-                                  <input id="autocomplete-dropdown-typeahead" type="text" placeholder="Choose Designer" class="designer">
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
                     <li>
+                          <a class="item-link smart-select smart-select-init">
+                            <select name="category" id="category">
+                              <option value="1" selected>Handbag</option>
+                              <option value="2">Shoes</option>
+                              <option value="3">Apparel</option>
+                              <option value="4">Accessories</option>
+                              <option value="5">Jewelry</option>
+                            </select>
+                            <div class="item-content">
+                              <div class="item-inner">
+                                <div class="item-title">Category</div>
+                              </div>
+                            </div>
+                          </a>
+                      </li>
+                      <li>
+                          <a class="item-link item-content" href="#" id="autocomplete-standalone">
+                            <input type="hidden">
+                            <div class="item-inner">
+                              <div class="item-title"> Designer </div>
+                              <div class="item-after"></div>
+                            </div>
+                          </a>
+                      </li>
+                    <li>
+                    <li>
+                          <a class="item-link smart-select smart-select-init">
+                            <select name="age">
+                              <option value="1" selected>1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
+                              <option value="11-20">11-20</option>
+                              <option value="21-50">11-50</option>
+                              <option value="Vintage">Vintage</option>
+                            </select>
+                            <div class="item-content">
+                              <div class="item-inner">
+                                <div class="item-title">Age of Item</div>
+                              </div>
+                            </div>
+                          </a>
+                      </li>
                       <div class="item-content item-input">
                         <div class="item-inner">
                           <div class="item-title item-label">Date Code / Serial Number</div>
@@ -45,7 +84,7 @@
                         </div>
                       </div>
                     </li>
-                     <li>
+                    <li>
                       <div class="item-content item-input">
                         <div class="item-inner">
                           <div class="item-title item-label">Age of Item</div>
