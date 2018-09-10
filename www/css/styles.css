@@ -59,7 +59,7 @@ h4.title { font-size: 20px; margin: 15px;}
 .ios a.on {color: white; background-color: #ff2e63;}
 .image-intro {margin: 40px;}
 .inner-bottom {position: relative; height: 100%; width: 100%}
-.sell-bottom .next,  .sell-bottom .convert-form-to-data {width: 100px; padding: 15px;  position: absolute; right: 22px; top: 22px; border: 1px solid #ff2e63; color: #fff; background-color: #ff2e63; display: block; text-align: center;}
+.sell-bottom .next, .convert-form-to-data {width: 100px; padding: 15px;  position: absolute; right: 22px; top: 22px; border: 1px solid #ff2e63; color: #fff; background-color: #ff2e63; display: block; text-align: center;}
 
 
 /*Shipping*/
