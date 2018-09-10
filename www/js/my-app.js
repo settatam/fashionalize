@@ -214,7 +214,7 @@ $$(document).on('page:init', '.page[data-name="designer"]', function (e) {
   });
 })
 
-$$(document).on('page:init', '.page[data-name="other"]', function(e){
+$$(document).on('page:init', '.page[data-name="what-to-sell"]', function(e){
   var autocompleteStandaloneSimple = app.autocomplete.create({
   openIn: 'page', //open in page
   openerEl: '#autocomplete-standalone', //link that opens autocomplete
@@ -253,11 +253,19 @@ $$(document).on('change', '#age', function(e){
 })
 
 $$(document).on('page:init', '.page[data-name="shipping"]', function (e) {
-     sub_total = 0;
-     app.request.json(FASHION_URL + '/api/shipping-address', function(response){
+    sub_total = 0;
+    app.request.json(FASHION_URL + '/api/shipping-address', function(response){
         response.forEach(shippingAddress)
     })
 })
+
+$$(document).on('click', '.convert-form-to-data', function(){
+  var formData = app.form.convertToData('#my-form');
+  //alert(JSON.stringify(formData));
+  app.request.json(FASHION_URL + '/api/items/store', function(response){
+      //response.forEach(shippingAddress)
+  })
+});
 
 //End pages
 

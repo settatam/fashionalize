@@ -16,16 +16,119 @@
         <div class="page-content">
             <div class="content-block">
                 <h4 class="title"> What will you like to sell </h4>
-                <div class="category-container">
-                    <a href="#" data-name="handbag" data-id="1" class="add-category"> Handbag </a>
-                    <a href="#" data-name="shoes" data-id="2" class="add-category"> Shoes </a>
-                    <a href="#" data-name="apparel" data-id="3" class="add-category"> Apparel </a>
-                    <a href="#" data-name="jewelry" data-id="4" class="add-category"> Jewelry </a>
-                    <a href="#" data-name="accessories" data-id="5" class="add-category"> Accessories </a>
-                </div>
+               <form class="list" id="my-form">
+                  <ul>
+                    <li>
+                          <a class="item-link smart-select smart-select-init">
+                            <select name="category" id="category">
+                              <option value="1" selected>Handbag</option>
+                              <option value="2">Shoes</option>
+                              <option value="3">Apparel</option>
+                              <option value="4">Accessories</option>
+                              <option value="5">Jewelry</option>
+                            </select>
+                            <div class="item-content">
+                              <div class="item-inner">
+                                <div class="item-title">Category</div>
+                              </div>
+                            </div>
+                          </a>
+                      </li>
+                      <li>
+                          <a class="item-link item-content" href="#" id="autocomplete-standalone">
+                            <input type="hidden">
+                            <div class="item-inner">
+                              <div class="item-title"> Designer </div>
+                              <div class="item-after"></div>
+                            </div>
+                          </a>
+                      </li>
+                    <li>
+                          <a class="item-link smart-select smart-select-init">
+                            <select name="age" id="age">
+                              <option value="1" selected>1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
+                              <option value="11-20">11-20</option>
+                              <option value="21-50">11-50</option>
+                              <option value="Vintage">Vintage</option>
+                            </select>
+                            <div class="item-content">
+                              <div class="item-inner">
+                                <div class="item-title">Age of Item</div>
+                              </div>
+                            </div>
+                          </a>
+                      </li>
+                    <li>
+                      <div class="item-content item-input">
+                        <div class="item-inner">
+                          <div class="item-title item-label">Date Code / Serial Number</div>
+                          <div class="item-input-wrap">
+                            <input type="text" name="date_code" placeholder="Date Code / Serial Number" id="date_code">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="item-content item-input">
+                        <div class="item-inner">
+                          <div class="item-title item-label">Style</div>
+                          <div class="item-input-wrap">
+                            <input type="text" name="style" placeholder="Example: Monogram Neverfull GM" id="sell-style">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                   <li>
+                      <label class="item-checkbox item-content">
+                        <div class="item-title item-label">I have the following</div>
+                        <input type="checkbox" name="addition" value="OriginalBox"/>
+                        <i class="icon icon-checkbox"></i>
+                        <div class="item-inner">
+                          <div class="item-title">Original Box</div>
+                        </div>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="item-checkbox item-content">
+                        <input type="checkbox" name="addition" value="DustBag"/>
+                        <i class="icon icon-checkbox"></i>
+                        <div class="item-inner">
+                          <div class="item-title">Dust Bags</div>
+                        </div>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="item-checkbox item-content">
+                        <input type="checkbox" name="addition" value="OriginalTags"/>
+                        <i class="icon icon-checkbox"></i>
+                        <div class="item-inner">
+                          <div class="item-title">Original Tags</div>
+                        </div>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="item-checkbox item-content">
+                        <input type="checkbox" name="addition" value="AuthenticityCards"/>
+                        <i class="icon icon-checkbox"></i>
+                        <div class="item-inner">
+                          <div class="item-title">Authenticity Cards</div>
+                        </div>
+                      </label>
+                    </li>
+                  </ul>
+                </form>
                     <div class="sell-bottom">
                         <div class="inner-bottom">
-                            <a href="#" class="next" data-next='/designer/'> Next </a>
+                            <a href="#" class="convert-form-to-data"> Next </a>
                         </div>
                     </div>
                 </div>
