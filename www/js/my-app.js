@@ -473,6 +473,7 @@ function uploadPhoto(fileURL) {
 
 var win = function (r) {
   user_images.push(r.response);
+  alert(r.reponse);
   images_length = user_images.length;
   var all_images = $$(document).find('.slide-photo');
   image_string = '<img src="https://www.fashionerize.com/images/'+r.response +'" />';
