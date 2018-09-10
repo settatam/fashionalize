@@ -421,9 +421,7 @@ $$(document).on('click', '.add-to-wishlist', function (e) {
 })
 
 $$(document).on('click', '.sell-now', function (e) {
-
-    navigator.camera.getPicture(uploadPhoto,
-                                edPhoto,{quality:50, destinationType: Camera.DestinationType.FILE_URI});
+  navigator.camera.getPicture(uploadPhoto,failedPhoto,{quality:50, destinationType: Camera.DestinationType.FILE_URI});
 })
 
 $$('#take-picture').on('click', function(){
