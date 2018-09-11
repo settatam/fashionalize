@@ -456,6 +456,7 @@ function uploadPhoto(fileURL) {
   var options = new FileUploadOptions();
   options.fileKey = "file";
   options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
+  $$('.uploaded-image').html('<img src='+fileURL+' />');
   options.mimeType = "image/jpeg";
   options.chunkedMode = false;
   options.headers = {Connection: "close"};
