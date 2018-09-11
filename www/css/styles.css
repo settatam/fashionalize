@@ -41,7 +41,7 @@ a.product-block {color: black; display: block; }
 .category-container {padding: 15px; width: auto; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;}
 
 .slide-photo {
-  width: 100px; height: 100px; background-color: #ccc; border: 1px solid #ccc; margin: auto; overflow: hidden;
+  width: 100px; height: 100px; background-color: #ccc; border: 1px solid #ccc;overflow: hidden;
 }
 
 .sell-bottom {bottom: 0; position: absolute; height: 100px; border-top: 1px solid #ccc; width: 100%;}

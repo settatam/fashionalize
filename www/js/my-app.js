@@ -479,7 +479,6 @@ var win = function (r) {
   var all_images = $$(document).find('.slide-photo');
   image_string = '<img src="https://www.fashionerize.com/images/'+r.response +'" />';
   current_photo = all_images.eq(images_length-1).html(image_string);
-  $$('.uploaded-image').html(image_string);
   if(user_images.length == 4) {
     $$('#image-response').html('<p> You have uploaded as many images as needed </p>')
   }else if(user_images.length == 1) {
