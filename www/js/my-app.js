@@ -104,6 +104,7 @@ var user = storage.getItem('user') !== null ? storage.getItem('user') : {};
 var items_to_sell = [];
 var current_item = {};
 var item_additions = [];
+var active_image;
 
 if(storage.getItem('token') !== null) {
   userIsLoggedIn = true;
@@ -452,7 +453,6 @@ $$('#close-camera').on('click', function(){
 })
 
 function uploadPhoto(fileURL) {
-  alert(fileURL);
   var options = new FileUploadOptions();
   options.fileKey = "file";
   options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
@@ -473,6 +473,7 @@ function uploadPhoto(fileURL) {
 }
 
 var win = function (r) {
+  alert(fileURL + 'is it');
   user_images.push(r.response);
   images_length = user_images.length;
   var all_images = $$(document).find('.slide-photo');
