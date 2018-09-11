@@ -481,9 +481,9 @@ var win = function (r) {
   image_string = '<div class="slide-photo"><img src="'+ active_image +'" /></div>';
   $$('.slide-container').append(image_string);
   if(user_images.length == 4) {
-    $$('#image-response').html('<p> You have uploaded as many images as needed </p>')
+    $$('#images-response').html('<p> You have uploaded as many images as needed </p>')
   }else{
-    $$('#image-response').html('<p> '+ image_responses[user_images.length] +' </p>')
+    $$('#images-response').html('<p> '+ image_responses[user_images.length] +' </p>')
   }
 }
 
