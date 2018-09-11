@@ -457,6 +457,7 @@ function uploadPhoto(fileURL) {
   options.fileKey = "file";
   options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
   $$('.uploaded-image').html('<img src='+fileURL+' />');
+  active_image = fileURL;
   options.mimeType = "image/jpeg";
   options.chunkedMode = false;
   options.headers = {Connection: "close"};
@@ -473,16 +474,16 @@ function uploadPhoto(fileURL) {
 }
 
 var win = function (r) {
-  alert(fileURL + 'is it');
   user_images.push(r.response);
   images_length = user_images.length;
   var all_images = $$(document).find('.slide-photo');
-  image_string = '<img src="https://www.fashionerize.com/images/'+r.response +'" />';
-  current_photo = all_images.eq(images_length-1).html(image_string);
+  image_string = '<div class"slide-photo"><img src="'+ active_image +'" /></div>';
   if(user_images.length == 4) {
     $$('#image-response').html('<p> You have uploaded as many images as needed </p>')
   }else if(user_images.length == 1) {
     $$('#image-response').html('<p> You have uploaded as many images as needed </p>')
+  }else{
+    $$('#image-response').html('<p> '+ image_responses[user_images.length-1] +' </p>')
   }
 }
 
