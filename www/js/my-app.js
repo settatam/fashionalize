@@ -615,7 +615,7 @@ var category_types = {
     name: 'accessories',
     type: ['wallets', 'sunglasses']
   },
-  'jewelry' {
+  'jewelry': {
     name: 'jewelry',
     type: ['necklaces', 'bracelets']
   },
