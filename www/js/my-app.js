@@ -600,6 +600,31 @@ function failedPhoto(data){
 }
 
 // all designers
+//all category types:
+
+var category_types = {
+  'handbags' : {
+    name: 'handbag',
+    types : ['Clutch', 'Tote']
+  },
+  'shoes': {
+    name: 'shoes',
+    type: ['boots', 'heels']
+  },
+  'accessories': {
+    name: 'accessories',
+    type: ['wallets', 'sunglasses']
+  },
+  'jewelry' {
+    name: 'jewelry',
+    type: ['necklaces', 'bracelets']
+  },
+  'apparel': {
+    name: 'apparel',
+    type: ['skirts', 'pants']
+  }
+
+}
 
 var designers = [
   "1883",

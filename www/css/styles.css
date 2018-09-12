@@ -67,3 +67,15 @@ h4.title { font-size: 20px; margin: 15px;}
 .shipping-address-list {display: none;}
 .shipping-address-list p {    padding-bottom: 0px; margin-bottom: 5px; margin-top: 5px;}
 
+.color label.item-radio .item-inner {padding-left: 50px;}
+.color {position: relative;}
+.color:before {width: 20px; height: 20px; position: absolute; left: 20px; top: 50%; margin-top: -8px; content: ' ';}
+.blue:before {background-color: blue;}
+.purple:before {background-color: purple;}
+.black:before {background-color: black;}
+.grey:before {background-color: grey;}
+.yellow:before {background-color: yellow;}
+.green:before {background-color: green;}
+
+
+
