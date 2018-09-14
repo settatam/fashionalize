@@ -688,11 +688,44 @@ function failedPhoto(data){
 var category_types = {
   'handbags' : {
     name: 'handbag',
-    types : ['Clutch', 'Tote']
+    types : ['Clutch', 
+            'Wristlet',
+            'Tote',
+            'Shoulder Bag',
+            'Satchel',
+            'Pochette',
+            'Hobo',
+            'Evening',
+            'Crossbody Bag',
+            'Cosmetic Bag'
+            ]
   },
   'shoes': {
     name: 'shoes',
-    types: ['boots', 'heels']
+    types: ['Ankle Boots', 
+            'Snow Boots', 
+            'Riding Boots', 
+            'Rain Boots', 
+            'Over the Knee', 
+            'Motorcycle Boots', 
+            'Mid Calf Boots', 
+            'Knee High Boots', 
+            'Cowboy Boots'
+            'Flats',
+            'Business',
+            'Wedges',
+            'Sneakers',
+            'Slingback',
+            'Sandals',
+            'Pumps',
+            'Platform',
+            'Mules',
+            'Mary Jane',
+            'Loafers',
+            'Kitten',
+            'Heels',
+            'Flip-Flops',
+            ]
   },
   'accessories': {
     name: 'accessories',
