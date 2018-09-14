@@ -285,13 +285,11 @@ $$(document).on('page:init', '.page[data-name="choose-cat"]', function(e){
 
 $$(document).on('click', '.choose-type', function(e){
   var t = $$(this).data('type').trim();
-  console.log(t)
   var cats = category_types[t]['types'];
-  console.log(cats);
   var items = [];
   for (var i = 0; i < cats.length; i++) {
     items.push({
-      title: ' ' + cats[i],
+      title: cats[i],
     });
   }
 
@@ -303,7 +301,7 @@ $$(document).on('click', '.choose-type', function(e){
     // List item Template7 template
     itemTemplate:
       '<li>' +
-        '<a href="#" class="item-link item-content choose-type">' +
+        '<a href="#" class="item-link item-content enter-type" data-category="{{t}}" data-type="{{title}}">' +
           '<div class="item-inner">' +
             '<div class="item-title-row">' +
               '<div class="item-title">{{title}}</div>' +
@@ -321,6 +319,14 @@ $$(document).on('click', '.choose-category', function(e){
             reloadCurrent: true
         }
   mainView.router.navigate('/choose-category/', options)
+})
+
+$$(document).on('click', '.enter-type', function(e){
+  var obj = $$(this);
+  updateCategory = true;
+  alert('updating category');
+  $$('#choose-category').find('.item-after').text(obj.data('category') .' - ' obj.data('type'))
+  app.router.back();
 })
 
 $$(document).on('change', '#category', function(e){
