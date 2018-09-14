@@ -17,7 +17,7 @@
             <div class="content-block">
                <form class="list" id="my-form">
                   <ul>
-                    <li>
+                    <!-- <li>
                           <a class="item-link smart-select smart-select-init">
                             <select name="category" id="category">
                               <option value="1" selected>Handbag</option>
@@ -32,8 +32,18 @@
                               </div>
                             </div>
                           </a>
-                      </li>
+                      </li> -->
                       <li>
+                        <a class="choose-category" href="#" id="choose-category">
+                          <div class="item-content">
+                            <div class="item-inner">
+                              <div class="item-title">Category</div>
+                              <div class="item-after">Choose Category</div>
+                            </div>
+                          </div>
+                        </a>
+                    </li>
+                    <li>
                           <a class="item-link item-content" href="#" id="autocomplete-standalone">
                             <input type="hidden">
                             <div class="item-inner">
@@ -41,7 +51,7 @@
                               <div class="item-after"></div>
                             </div>
                           </a>
-                      </li>
+                    </li>
                     <li>
                           <a class="item-link smart-select smart-select-init">
                             <select name="condition" id="condition">
@@ -97,7 +107,7 @@
                               </div>
                             </div>
                           </a>
-                      </li>
+                    </li>
                     <li>
                       <div class="item-content item-input">
                         <div class="item-inner">
@@ -118,49 +128,63 @@
                         </div>
                       </div>
                     </li>
-                   <li>
-                       <div class="item-content item-input">
-                        <div class="item-inner">
-                            <div class="item-title item-label">I have the following:</div>
-                        </div>
-                      </div>
-                   </li>
-                   <li>
-                      <label class="item-checkbox item-content">
-                        <input type="checkbox" name="addition" value="OriginalBox"/>
-                        <i class="icon icon-checkbox"></i>
-                        <div class="item-inner">
-                          <div class="item-title">Original Box</div>
-                        </div>
-                      </label>
+                    <li>
+                        <a class="item-link smart-select smart-select-init">
+                            <select name="OriginalBox" id="OriginalBox">
+                                <option value="0" selected>Choose</option>
+                                <option value="1" selected>Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                            <div class="item-content">
+                              <div class="item-inner">
+                                <div class="item-title">Original Box</div>
+                              </div>
+                            </div>
+                          </a>
+                    </li>
+                     <li>
+                        <a class="item-link smart-select smart-select-init">
+                            <select name="DustBag" id="DustBag">
+                                <option value="0" selected>Choose</option>
+                                <option value="1" selected>Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                            <div class="item-content">
+                              <div class="item-inner">
+                                <div class="item-title">Dust bag</div>
+                              </div>
+                            </div>
+                          </a>
                     </li>
                     <li>
-                      <label class="item-checkbox item-content">
-                        <input type="checkbox" name="addition" value="DustBag"/>
-                        <i class="icon icon-checkbox"></i>
-                        <div class="item-inner">
-                          <div class="item-title">Dust Bags</div>
-                        </div>
-                      </label>
+                        <a class="item-link smart-select smart-select-init">
+                            <select name="OriginalTags" id="OriginalTags">
+                                <option value="0" selected>Choose</option>
+                                <option value="1" selected>Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                            <div class="item-content">
+                              <div class="item-inner">
+                                <div class="item-title">Original Tags</div>
+                              </div>
+                            </div>
+                          </a>
                     </li>
                     <li>
-                      <label class="item-checkbox item-content">
-                        <input type="checkbox" name="addition" value="OriginalTags"/>
-                        <i class="icon icon-checkbox"></i>
-                        <div class="item-inner">
-                          <div class="item-title">Original Tags</div>
-                        </div>
-                      </label>
+                        <a class="item-link smart-select smart-select-init">
+                            <select name="AuthCards" id="AuthCards">
+                                <option value="0" selected>Choose</option>
+                                <option value="1" selected>Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                            <div class="item-content">
+                              <div class="item-inner">
+                                <div class="item-title">Authenticity Cards</div>
+                              </div>
+                            </div>
+                          </a>
                     </li>
-                    <li>
-                      <label class="item-checkbox item-content">
-                        <input type="checkbox" name="addition" value="AuthenticityCards"/>
-                        <i class="icon icon-checkbox"></i>
-                        <div class="item-inner">
-                          <div class="item-title">Authenticity Cards</div>
-                        </div>
-                      </label>
-                    </li>
+
                   </ul>
 
                   <a class="convert-form-to-data" href="#"> Next </a>

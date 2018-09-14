@@ -23,6 +23,14 @@ var app = new Framework7({
       url: 'category.html',
     },
     {
+      path: '/choose-category/',
+      url: 'choose-category.html',
+    },
+     {
+      path: '/choose-type/',
+      url: 'choose-type.html',
+    },
+    {
       path: '/what-to-sell/',
       url: 'what-to-sell.html',
     },
@@ -243,6 +251,76 @@ $$(document).on('page:init', '.page[data-name="what-to-sell"]', function(e){
     },
   },
 });
+})
+
+$$(document).on('page:init', '.page[data-name="choose-cat"]', function(e){
+  var cats = Object.keys(category_types);
+  var items = [];
+  for (var i = 0; i < cats.length; i++) {
+    items.push({
+      title: ' ' + cats[i],
+    });
+  }
+
+  var virtualList = app.virtualList.create({
+    // List Element
+    el: '.virtual-list',
+    // Pass array with items
+    items: items,
+    // List item Template7 template
+    itemTemplate:
+      '<li>' +
+        '<a href="#" class="item-link item-content choose-type" data-type="{{title}}">' +
+          '<div class="item-inner">' +
+            '<div class="item-title-row">' +
+              '<div class="item-title">{{title}}</div>' +
+            '</div>' +
+          '</div>' +
+        '</a>' +
+      '</li>',
+    // Item height
+    height: app.theme === 'ios' ? 63 : 73,
+  });
+})
+
+$$(document).on('click', '.choose-type', function(e){
+  var t = $$(this).data('type').trim();
+  console.log(t)
+  var cats = category_types[t]['types'];
+  console.log(cats);
+  var items = [];
+  for (var i = 0; i < cats.length; i++) {
+    items.push({
+      title: ' ' + cats[i],
+    });
+  }
+
+  var virtualList = app.virtualList.create({
+    // List Element
+    el: '.virtual-list',
+    // Pass array with items
+    items: items,
+    // List item Template7 template
+    itemTemplate:
+      '<li>' +
+        '<a href="#" class="item-link item-content choose-type">' +
+          '<div class="item-inner">' +
+            '<div class="item-title-row">' +
+              '<div class="item-title">{{title}}</div>' +
+            '</div>' +
+          '</div>' +
+        '</a>' +
+      '</li>',
+    // Item height
+    height: app.theme === 'ios' ? 63 : 73,
+  });
+})
+
+$$(document).on('click', '.choose-category', function(e){
+  options = {
+            reloadCurrent: true
+        }
+  mainView.router.navigate('/choose-category/', options)
 })
 
 $$(document).on('change', '#category', function(e){
@@ -609,19 +687,19 @@ var category_types = {
   },
   'shoes': {
     name: 'shoes',
-    type: ['boots', 'heels']
+    types: ['boots', 'heels']
   },
   'accessories': {
     name: 'accessories',
-    type: ['wallets', 'sunglasses']
+    types: ['wallets', 'sunglasses']
   },
   'jewelry': {
     name: 'jewelry',
-    type: ['necklaces', 'bracelets']
+    types: ['necklaces', 'bracelets']
   },
   'apparel': {
     name: 'apparel',
-    type: ['skirts', 'pants']
+    types: ['skirts', 'pants']
   }
 
 }
