@@ -324,7 +324,7 @@ $$(document).on('click', '.choose-category', function(e){
 $$(document).on('click', '.enter-type', function(e){
   var obj = $$(this);
   alert('updating category');
-  $$('#choose-category').find('.item-after').text(obj.data('category') .' - ' obj.data('type'))
+  $$('#choose-category').find('.item-after').text(obj.data('category') + ' - ' + obj.data('type'))
   app.router.back();
 })
 
