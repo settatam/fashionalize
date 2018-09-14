@@ -289,6 +289,7 @@ $$(document).on('click', '.choose-type', function(e){
   var items = [];
   for (var i = 0; i < cats.length; i++) {
     items.push({
+      cat:t, 
       title: cats[i],
     });
   }
@@ -301,7 +302,7 @@ $$(document).on('click', '.choose-type', function(e){
     // List item Template7 template
     itemTemplate:
       '<li>' +
-        '<a href="#" class="item-link item-content enter-type" data-category="{{t}}" data-type="{{title}}">' +
+        '<a href="#" class="item-link item-content enter-type" data-category="{{cat}}" data-type="{{title}}">' +
           '<div class="item-inner">' +
             '<div class="item-title-row">' +
               '<div class="item-title">{{title}}</div>' +
@@ -323,7 +324,6 @@ $$(document).on('click', '.choose-category', function(e){
 
 $$(document).on('click', '.enter-type', function(e){
   var obj = $$(this);
-  alert('updating category');
   $$('#choose-category').find('.item-after').text(obj.data('category') + ' - ' + obj.data('type'))
   app.router.back();
 })
