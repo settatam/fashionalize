@@ -318,7 +318,7 @@ $$(document).on('click', '.choose-category', function(e){
   options = {
             reloadCurrent: true
         }
-  mainView.router.navigate('/choose-category/', options)
+  app.router.navigate('/choose-category/', options)
 })
 
 $$(document).on('click', '.enter-type', function(e){
