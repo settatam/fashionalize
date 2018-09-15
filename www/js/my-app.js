@@ -710,7 +710,7 @@ var category_types = {
             'Motorcycle Boots', 
             'Mid Calf Boots', 
             'Knee High Boots', 
-            'Cowboy Boots'
+            'Cowboy Boots',
             'Flats',
             'Business',
             'Wedges',
