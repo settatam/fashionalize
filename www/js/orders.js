@@ -33,7 +33,6 @@ $$(document).on('page:init', '.page[data-name="orders"]', function(e){
         height: app.theme === 'ios' ? 63 : 73,
       });
     }else{
-      alert('You have no orders');
       $$('.orders-list').html('<p> You have no orders</p>')
     }
     
