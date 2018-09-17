@@ -58,10 +58,6 @@ var app = new Framework7({
       url: 'sales.html',
     },
     {
-      path: '/orders/',
-      url: 'orders.html',
-    },
-    {
       path: '/age/',
       url: 'age.html',
     },
