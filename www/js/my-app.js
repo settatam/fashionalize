@@ -5,6 +5,9 @@ var app = new Framework7({
   panel: {
     swipe: 'left',
   },
+   smartSelect: {
+    closeOnSelect: true
+  },
   routes: [
     {
       path: '/',
@@ -49,6 +52,14 @@ var app = new Framework7({
     {
       path: '/sell/',
       url: 'sell.html',
+    },
+    {
+      path: '/sales/',
+      url: 'sales.html',
+    },
+    {
+      path: '/orders/',
+      url: 'orders.html',
     },
     {
       path: '/age/',
@@ -113,6 +124,19 @@ var items_to_sell = [];
 var current_item = {};
 var item_additions = [];
 var active_image;
+var sell = {
+  OriginalTags: 0,
+  AuthCards: 0,
+  DustBag: 0,
+  DateCode: 0,
+  brand: '',
+  condition: '',
+  color: '',
+  age: '',
+  style: '',
+  category: '',
+  type: ''
+};
 
 if(storage.getItem('token') !== null) {
   userIsLoggedIn = true;
@@ -218,6 +242,8 @@ $$(document).on('page:init', '.page[data-name="designer"]', function (e) {
   on: {
     change: function (value) {
      current_item.designer = value[0];
+     sell.brand = value[0];
+     $$('#item-brand').val(value[0])
     },
   },
   });
@@ -243,14 +269,15 @@ $$(document).on('page:init', '.page[data-name="what-to-sell"]', function(e){
   },
   on: {
     change: function (value) {
-      console.log(value);
-      // Add item text value to item-after
-      $$('#autocomplete-standalone').find('.item-after').text(value[0]);
-      // Add item value to input value
-      $$('#autocomplete-standalone').find('input').val(value[0]);
+        sell.brand = value[0];
+        $$('#item-brand').val(value[0])
+        // Add item text value to item-after
+        $$('#autocomplete-standalone').find('.item-after').text(value[0]);
+        // Add item value to input value
+        $$('#autocomplete-standalone').find('input').val(value[0]);
+      },
     },
-  },
-});
+  });
 })
 
 $$(document).on('page:init', '.page[data-name="choose-cat"]', function(e){
@@ -316,24 +343,17 @@ $$(document).on('click', '.choose-type', function(e){
 })
 
 $$(document).on('click', '.choose-category', function(e){
-  options = {
-            animate: true
-        }
+  options = { animate: true }
   mainView.router.navigate('/choose-category/', options)
 })
 
 $$(document).on('click', '.enter-type', function(e){
   var obj = $$(this);
   $$('#choose-category').find('.item-after').text(obj.data('category') + ' - ' + obj.data('type'))
+  $$('#item-category').val(obj.data('category'))
+  $$('#item-type').val(obj.data('type'))
+  sell.type = obj.data('type')
   app.router.back();
-})
-
-$$(document).on('change', '#category', function(e){
-  app.router.back()
-})
-
-$$(document).on('change', '#age', function(e){
-  app.router.back()
 })
 
 $$(document).on('page:init', '.page[data-name="shipping"]', function (e) {
@@ -344,25 +364,14 @@ $$(document).on('page:init', '.page[data-name="shipping"]', function (e) {
 })
 
 $$(document).on('click', '.convert-form-to-data', function(){
-  var formData = app.form.convertToData('#my-form');
-  var category = 2;
-  var designer = "Chanel";
-  var age = 3;
-  var date_code = 3;
-  var additions = ['clothes', 'shoes'];
-  options = {
-            reloadCurrent: true
-        }
+  var formData = app.form.convertToData('#my-form')
+  app.request.post(FASHION_URL + '/api/sell/store', formData, function (response) {
+        response = JSON.parse(response)
+        console.log(response)
+    });
+  options = { animation: true }
   mainView.router.navigate('/image-upload/', options)
-  
-  //params = {category: category, designer: designer, age: age, date_code: date_code, style:style, additions:additions}
-    //app.request.post(FASHION_URL + '/api/sell/store', params, function (response) {
-        //data = JSON.parse(response);
-        //options = {
-            //reloadCurrent: true
-        //}
-        //mainView.router.navigate('/cart/', options)
-    //});
+
 });
 
 //End pages

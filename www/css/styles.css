@@ -76,6 +76,39 @@ h4.title { font-size: 20px; margin: 15px;}
 .grey:before {background-color: grey;}
 .yellow:before {background-color: yellow;}
 .green:before {background-color: green;}
+.red:before {background-color: red;}
+.orange:before {background-color: #FFA500;}
+.gold:before {background:color: #FFD700;}
+.silver:before{background-color: #c0c0c0;}
+.white:before{background-color: white}
+.cream:before{background-color: #fffdd0;}
+.brown:before{background-color: #A52A2A}
+.tan:before{background-color: #D2B48C}
+.pink:before{background-color: #FFC0CB}
 
+.badge {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+}
 
+.badge-warning {
+    color: #111;
+    background-color: #ffc107;
+}
 
+.badge-danger {
+    color: #fff;
+    background-color: #dc3545;
+}
+
+.badge-info {
+    color: #fff;
+    background-color: #17a2b8;
+}
