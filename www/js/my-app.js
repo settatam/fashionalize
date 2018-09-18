@@ -173,12 +173,6 @@ $$(document).on('page:init', '.page[data-name="cart"]', function (e) {
     })
 })
 
-$$(document).on('page:init', '.page[data-name="collection"]', function (e) {
-    app.request.json('https://www.luxesystems.com/api/products', function(response){
-        response.forEach(createProduct)
-    })
-})
-
 $$(document).on('page:init', '.page[data-name="product"]', function (e) {
     app.request.json('https://www.luxesystems.com/api/products/'+mainView.router.currentRoute.query.id, function(response){
          $$('.product-description').text(response.OverallConditionDescription)
