@@ -94,6 +94,14 @@ var app = new Framework7({
       url: 'pages/settings/profile.html',
     },
     {
+      path: '/reset-password/',
+      url: 'pages/settings/password.html',
+    },
+    {
+      path: '/notification/',
+      url: 'pages/settings/notification.html',
+    },
+    {
       path: '/collection/',
       url: 'collection.html',
     },
